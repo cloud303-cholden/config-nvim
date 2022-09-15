@@ -18,4 +18,4 @@ There are a couple advantages to this.
 2. I don't need to check my bloated `~/.config` directory or its subdirectories into version control.
 
 ## Credits
-Based on Christian Chiarulli's sample configuration [here](https://github.com/LunarVim/nvim-basic-ide.git).
+Based on Christian Chiarulli's sample configuration: [link](https://github.com/LunarVim/nvim-basic-ide.git).
