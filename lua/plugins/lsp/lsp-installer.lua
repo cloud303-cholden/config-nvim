@@ -33,7 +33,7 @@ for _, server in pairs(servers) do
   }
 
   if server == "sumneko_lua" then
-    local sumneko_opts = require "plugins.lsp.settings.sumneko_lua"
+    local sumneko_opts = require("plugins.lsp.settings.sumneko_lua")
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
 
@@ -69,7 +69,8 @@ for _, server in pairs(servers) do
         end,
         hover_actions = {
           auto_focus = true,
-        }
+        },
+        inlay_hints = { show_parameter_hints = false },
       },
       server = {
         standalone = false,
