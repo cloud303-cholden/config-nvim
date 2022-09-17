@@ -5,7 +5,7 @@ end
 
 local actions = require "telescope.actions"
 
-telescope.setup {
+telescope.setup({
   defaults = {
 
     prompt_prefix = " ",
@@ -22,17 +22,4 @@ telescope.setup {
       },
     },
   },
-  extensions = {
-    frecency = {
-      -- db_root = "home/my_username/path/to/db_root",
-      show_scores = true,
-      show_unindexed = true,
-      ignore_patterns = {"*.git/*", "*/tmp/*"},
-      disable_devicons = false,
-      workspaces = {
-        ["conf"]    = "/home/ch/.config",
-        ["repos"] = "/home/ch/repos",
-      }
-    }
-  },
-}
+})
