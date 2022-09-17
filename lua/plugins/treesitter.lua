@@ -1,9 +1,9 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+local status_ok, treesitter_configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
 	return
 end
 
-configs.setup({
+treesitter_configs.setup({
 	ensure_installed = "all", -- one of "all" or a list of languages
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
