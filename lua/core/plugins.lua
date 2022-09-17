@@ -58,6 +58,7 @@ return packer.startup(function(use)
   use { "kylechui/nvim-surround", commit = "d91787d5a716623be7cec3be23c06c0856dc21b8" }
   use { "nvim-orgmode/orgmode", requires = "nvim-treesitter/nvim-treesitter", commit = "93ab75f1633dd7264cbb27bfd7bbcd6c1c4e3fc8" }
   use { "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig", commit = "202312e93869213c574d200a40eafeff4b4caec2" }
+  use { "folke/which-key.nvim", commit = "92d924d1f4ec67a86a4d54c3ea22caf8ad09a5d4" }
 
   -- Colorscheme
   use { "shaunsingh/nord.nvim", commit = "db98740c9429232508a25a98b7d41705f4d2fc1c" }
