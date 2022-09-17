@@ -91,7 +91,7 @@ M.on_attach = function(client, bufnr)
   if not navic_status_ok then
     return
   end
-  navic.on_attach(client, bufnr)
+  navic.attach(client, bufnr)
 end
 
 return M
