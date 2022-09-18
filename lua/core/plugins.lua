@@ -60,8 +60,9 @@ return packer.startup(function(use)
   use { "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig", commit = "202312e93869213c574d200a40eafeff4b4caec2" }
   use { "folke/which-key.nvim", commit = "92d924d1f4ec67a86a4d54c3ea22caf8ad09a5d4" }
 
-  -- Colorscheme
+  -- Colorschemes
   use { "shaunsingh/nord.nvim", commit = "db98740c9429232508a25a98b7d41705f4d2fc1c" }
+  use { "catppuccin/nvim", as = "catppuccin", commit = "fb453cea1904ead67901aa65086ccf877603dfc1" }
 
   -- CMP
   use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }
@@ -76,11 +77,17 @@ return packer.startup(function(use)
   use { "rafamadriz/friendly-snippets", commit = "d27a83a363e61009278b6598703a763ce9c8e617" }
 
   -- LSP
-  use { "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }
-  use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }
+  -- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }
   use { "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }
+  use { "williamboman/mason.nvim", commit = "d7eb2eeec566da6cfd1c61b1d7aa6fc592d1b296" }
+  use { "williamboman/mason-lspconfig.nvim", requires = { "neovim/nvim-lspconfig" }, commit = "b70dedab5ceb5f3f84c6bc9ceea013292a14f8dc" }
+  use { "jayp0521/mason-null-ls.nvim", after = { "null-ls.nvim", "mason.nvim" }, requires = { "jose-elias-alvarez/null-ls.nvim", "williamboman/mason.nvim" }, commit = "f501c9b8723e5422759d63d2963d870b755db4d4" }
+  use { "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }
   use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }
+
+  -- Rust
   use { "simrat39/rust-tools.nvim", commit = "11dcd674781ba68a951ab4c7b740553cae8fe671" }
+  use { "Saecki/crates.nvim", requires = { "nvim-lua/plenary.nvim" }, commit = "78fc9b8d61cd4a9a35aa3f4d1a9a2b1a51bab059" }
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" }
