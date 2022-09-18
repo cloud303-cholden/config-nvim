@@ -81,7 +81,7 @@ local keybindings = {
       ["<C-Down>"] = { ":resize +2<CR>", "Increase Window Height" },
       ["<C-Left>"] = { ":vertical resize -2<CR>", "Decrease Window Width" },
       ["<C-Right>"] = { ":vertical resize +2<CR>", "Increase Window Width" },
-      ["<S-q"] = { "<CMD>Bdelete!<CR>", "Delete Buffer" },
+      ["<S-q>"] = { "<CMD>Bdelete!<CR>", "Delete Buffer" },
     },
   },
   none_insert = {
