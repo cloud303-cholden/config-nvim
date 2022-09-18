@@ -14,6 +14,7 @@ local sources = {
   { name = "luasnip" },
   { name = "buffer" },
   { name = "path" },
+  { name = "crates" },
 }
 
 local om_status_ok, _ = pcall(require, "orgmode")
