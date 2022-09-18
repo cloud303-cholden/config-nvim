@@ -77,7 +77,6 @@ return packer.startup(function(use)
   use { "rafamadriz/friendly-snippets", commit = "d27a83a363e61009278b6598703a763ce9c8e617" }
 
   -- LSP
-  -- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }
   use { "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }
   use { "williamboman/mason.nvim", commit = "d7eb2eeec566da6cfd1c61b1d7aa6fc592d1b296" }
   use { "williamboman/mason-lspconfig.nvim", requires = { "neovim/nvim-lspconfig" }, commit = "b70dedab5ceb5f3f84c6bc9ceea013292a14f8dc" }
