@@ -12,17 +12,6 @@ local opts = { silent = true }
 keymap("", "<Space>", "<Nop>", opts)
 
 vim.g.mapleader = " "
--- Default options passed to `wk.register()`
-local _ = {
-  mode = "n", -- NORMAL mode
-  -- prefix: use "<leader>f" for example for mapping everything related to finding files
-  -- the prefix is prepended to every mapping part of `mappings`
-  prefix = "",
-  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = false, -- use `nowait` when creating keymaps
-}
 
 -- Need to rethink keybinding organization
 local keybindings = {
@@ -71,8 +60,8 @@ local keybindings = {
   none_normal = {
     prefix = "",
     groups = {
-      ["<S-l>"] = { ":bnext<CR>", "Next Buffer" },
-      ["<S-h>"] = { ":bprevious<CR>", "Previous Buffer" },
+      ["<S-l>"] = { "<CMD>bnext<CR>", "Next Buffer" },
+      ["<S-h>"] = { "<CMD>bprevious<CR>", "Previous Buffer" },
       ["<C-h>"] = { "<C-w>h", "Focus Left Window" },
       ["<C-j"] = { "<C-w>j", "Focus Lower Window" },
       ["<C-k>"] = { "<C-w>k", "Focus Upper Window" },
@@ -81,7 +70,7 @@ local keybindings = {
       ["<C-Down>"] = { ":resize +2<CR>", "Increase Window Height" },
       ["<C-Left>"] = { ":vertical resize -2<CR>", "Decrease Window Width" },
       ["<C-Right>"] = { ":vertical resize +2<CR>", "Increase Window Width" },
-      ["<S-q>"] = { "<CMD>Bdelete!<CR>", "Delete Buffer" },
+      ["<S-q>"] = { "<CMD>bdelete<CR>", "Delete Buffer" },
     },
   },
   none_insert = {

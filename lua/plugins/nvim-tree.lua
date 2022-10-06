@@ -8,6 +8,12 @@ if not config_status_ok then
   return
 end
 
+local icons_status_ok, icons = pcall(require, "nvim-web-devicons")
+if not icons_status_ok then
+  return
+end
+icons.setup()
+
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
@@ -16,7 +22,7 @@ nvim_tree.setup {
     update_cwd = true,
   },
   filters = {
-    dotfiles = false,
+    dotfiles = true,
   },
   actions = {
     open_file = {
@@ -63,7 +69,6 @@ nvim_tree.setup {
   },
   view = {
     width = 30,
-    height = 30,
     side = "right",
     mappings = {
       list = {

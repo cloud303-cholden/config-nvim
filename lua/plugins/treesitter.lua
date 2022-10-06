@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 treesitter_configs.setup({
-	ensure_installed = { "python", "go", "rust" },
+	ensure_installed = { "python", "go", "rust", "lua" },
 	ignore_install = { "" },
 	highlight = {
 		enable = true,

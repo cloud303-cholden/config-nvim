@@ -72,20 +72,7 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
-  end
-
-  if client.name == "sumneko_lua" then
-    client.resolved_capabilities.document_formatting = false
-  end
-
   lsp_keymaps(bufnr)
-  local illuminate_status_ok, illuminate = pcall(require, "illuminate")
-  if not illuminate_status_ok then
-    return
-  end
-  illuminate.on_attach(client)
 
   local navic_status_ok, navic = pcall(require, "nvim-navic")
   if not navic_status_ok then
