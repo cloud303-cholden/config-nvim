@@ -22,7 +22,7 @@ nvim_tree.setup {
     update_cwd = true,
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
   actions = {
     open_file = {
