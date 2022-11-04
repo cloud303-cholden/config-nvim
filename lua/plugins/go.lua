@@ -3,4 +3,6 @@ if not status_ok then
   return
 end
 
-go.setup {}
+go.setup {
+  luasnip = true,
+}
