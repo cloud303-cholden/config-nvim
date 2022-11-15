@@ -13,6 +13,7 @@ require "plugins.project"
 require "plugins.lualine"
 require "plugins.navic"
 require "plugins.go"
+-- require "plugins.rust"
 
 require "plugins.lsp.mason"
 

@@ -71,21 +71,62 @@ mason_lspconfig.setup_handlers {
       },
     }
   end,
-  -- ["gopls"] = function ()
-  --   lspconfig.gopls.setup {
-  --     settings = {
-  --       gopls = {
-  --         hints = {
-  --           assignVariableTypes = true,
-  --           compositeLiteralFields = true,
-  --           compositeLiteralTypes = true,
-  --           constantValues = true,
-  --           functionTypeParameters = true,
-  --           parameterNames = true,
-  --           rangeVariableTypes = true,
-  --         },
-  --       },
-  --     },
-  --   }
-  -- end,
+  ["rust_analyzer"] = function ()
+    local opts = {
+      mode = "n",
+      prefix = "<leader>",
+      buffer = nil,
+      silent = false,
+      noremap = true,
+      nowait = true,
+    }
+
+    local wk = require "which-key"
+    local mappings = {
+      ["r"] = {
+        name = "Run",
+        r = { ":update<CR>:RustRun<CR>", "Rust run" },
+        d = { ":update<CR>:RustDebuggables<CR>", "Rust debuggables" },
+        w = {
+          ":update<CR>:sp term://cargo watch -s 'clear && cargo run -q'<CR>",
+          "Cargo watch",
+        },
+        c = { ":update<CR>:Cargo run<CR>", "Cargo run" },
+        l = { ":RustRunnables<CR>", "Rust runnables" },
+      },
+    }
+    wk.register(mappings, opts)
+    require("rust-tools").setup({
+      tools = {
+        on_initialized = function()
+          vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "CursorHold", "InsertLeave" }, {
+            pattern = { "*.rs" },
+            callback = function()
+              vim.lsp.codelens.refresh()
+            end,
+          })
+        end,
+        hover_actions = {
+          auto_focus = true,
+        },
+        inlay_hints = {
+          auto = false,
+        },
+      },
+      server = {
+        on_attach = require("plugins.lsp.handlers").on_attach,
+        capabilities = require("plugins.lsp.handlers").capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            lens = {
+              enable = true,
+            },
+            checkOnSave = {
+              command = "clippy",
+            },
+          },
+        },
+      },
+    })
+  end,
 }

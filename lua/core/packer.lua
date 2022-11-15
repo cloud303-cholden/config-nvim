@@ -49,6 +49,9 @@ local plugins = {
   -- Go
   { "ray-x/go.nvim" },
   { "ray-x/guihua.lua" },
+
+  -- Rust
+  { "simrat39/rust-tools.nvim" },
 }
 
 local status_ok, packer = pcall(require, "packer")
