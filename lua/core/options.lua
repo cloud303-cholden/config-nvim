@@ -44,6 +44,7 @@ o.shell = "fish"
 o.shortmess:append "c"
 o.whichwrap:append("<,>,[,],h,l")
 o.iskeyword:append("-")
+o.guicursor = "i:block"
 
 g.loaded_perl_provider = 0
 g.loaded_node_provider = 0
