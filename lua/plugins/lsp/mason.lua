@@ -84,15 +84,16 @@ mason_lspconfig.setup_handlers {
     local wk = require "which-key"
     local mappings = {
       ["r"] = {
-        name = "Run",
-        r = { ":update<CR>:RustRun<CR>", "Rust run" },
-        d = { ":update<CR>:RustDebuggables<CR>", "Rust debuggables" },
+        name = "Rust",
         w = {
           ":update<CR>:sp term://cargo watch -s 'clear && cargo run -q'<CR>",
           "Cargo watch",
         },
-        c = { ":update<CR>:Cargo run<CR>", "Cargo run" },
-        l = { ":RustRunnables<CR>", "Rust runnables" },
+        c = {
+          ":update<CR>:sp term://cargo check<CR>",
+          "Cargo check",
+        },
+        r = { ":update<CR>:Cargo run<CR>", "Cargo run" },
       },
     }
     wk.register(mappings, opts)
