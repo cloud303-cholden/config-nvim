@@ -20,6 +20,8 @@ local plugins = {
   -- Utils
   { "nvim-lua/plenary.nvim" },
   { "numToStr/Comment.nvim" },
+  { "saifulapm/chartoggle.nvim" },
+  { "akinsho/toggleterm.nvim", tag = "2.3.0" },
 
   -- Telescope
   { "nvim-telescope/telescope.nvim" },
