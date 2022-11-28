@@ -1,18 +1,18 @@
-local status_ok, lualine = pcall(require, "lualine")
-if not status_ok then
-	return
+local ok, lualine = pcall(require, "lualine")
+if not ok then
+  return
 end
 
 lualine.setup({
-	options = {
-		icons_enabled = true,
-		component_separators = { right = "", left = "" },
-		section_separators = { right = "", left = "" },
-		disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
-		always_divide_middle = true,
-	},
-	sections = {
-		lualine_a = {
+  options = {
+    icons_enabled = true,
+    component_separators = { right = "", left = "" },
+    section_separators = { right = "", left = "" },
+    disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
+    always_divide_middle = true,
+  },
+  sections = {
+    lualine_a = {
       {
         "mode",
         fmt = function(str)
@@ -20,7 +20,7 @@ lualine.setup({
         end,
       },
     },
-		lualine_b = {
+    lualine_b = {
       {
         "branch",
         icons_enabled = true,
@@ -49,7 +49,7 @@ lualine.setup({
         },
       },
     },
-		lualine_y = {
+    lualine_y = {
       {
         "diff",
         colored = false,
@@ -59,21 +59,21 @@ lualine.setup({
         end,
       },
     },
-		lualine_z = {
+    lualine_z = {
       {
         "location",
         padding = 0,
       },
     },
-	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = { "location" },
-		lualine_y = {},
-		lualine_z = {},
-	},
-	tabline = {},
-	extensions = {},
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {},
+    lualine_x = { "location" },
+    lualine_y = {},
+    lualine_z = {},
+  },
+  tabline = {},
+  extensions = {},
 })

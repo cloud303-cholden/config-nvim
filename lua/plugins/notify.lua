@@ -30,11 +30,7 @@ local stages = {
       opacity = { 100 },
       col = { 1 },
       row = {
-        stages_util.slot_after_previous(
-          win,
-          state.open_windows,
-          stages_util.DIRECTION.BOTTOM_UP
-        ),
+        stages_util.slot_after_previous(win, state.open_windows, stages_util.DIRECTION.BOTTOM_UP),
         frequency = 3,
         complete = function()
           return true
@@ -47,11 +43,7 @@ local stages = {
       col = { 1 },
       time = true,
       row = {
-        stages_util.slot_after_previous(
-          win,
-          state.open_windows,
-          stages_util.DIRECTION.BOTTOM_UP
-        ),
+        stages_util.slot_after_previous(win, state.open_windows, stages_util.DIRECTION.BOTTOM_UP),
         frequency = 3,
         complete = function()
           return true
@@ -78,11 +70,7 @@ local stages = {
       },
       col = { 1 },
       row = {
-        stages_util.slot_after_previous(
-          win,
-          state.open_windows,
-          stages_util.DIRECTION.BOTTOM_UP
-        ),
+        stages_util.slot_after_previous(win, state.open_windows, stages_util.DIRECTION.BOTTOM_UP),
         frequency = 3,
         complete = function()
           return true
@@ -98,6 +86,5 @@ notify.setup({
   stages = stages,
   fps = 100,
 })
-
 
 return notify
