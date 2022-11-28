@@ -1,0 +1,57 @@
+[
+  {
+    "name": "type: chore",
+    "color": "fef2c0",
+    "description": "Necessary but less impactful tasks.",
+    "aliases": [
+      "chore",
+      "dependabot",
+      "dependencies",
+      "dependency",
+      "greenkeeper",
+      "legal",
+      "maintenance",
+      "Type: Maintenance",
+      "type: maintenance"
+    ]
+  },
+  {
+    "name": "type: docs",
+    "color": "fef2c0",
+    "description": "Related to documentation and information.",
+    "aliases": [
+      "doc",
+      "docs",
+      "document",
+      "documentation",
+      "documents",
+      "Type: Documentation",
+      "type: documentation"
+    ]
+  },
+  {
+    "name": "type: feature",
+    "color": "5ebeff",
+    "description": "New feature for config.",
+    "aliases": [
+      "addition",
+      "enhancement",
+      "feature",
+      "type: enhancement",
+      "Type: Feature"
+    ]
+  },
+  {
+    "name": "type: fix",
+    "color": "91ca55",
+    "description": "Iterations on existing features or infrastructure.",
+    "aliases": [
+      "fix",
+      "improvement",
+      "optimization",
+      "refactor",
+      "Type: Fix",
+      "Type: Refactoring"
+    ]
+  }
+]
