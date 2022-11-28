@@ -17,12 +17,12 @@ end
 
 function M.l(plugin_name)
   require("plugins.notify")("cmp" .. " not found!", "error")
-  local status_ok, plugin = pcall(require, plugin_name)
-  if not status_ok then
+  local ok, plugin = pcall(require, plugin_name)
+  if not ok then
     --require("plugins.notify")(plugin_name .. " not found!", "error")
-    return status_ok, false
+    return ok, false
   end
-  return status_ok, plugin
+  return ok, plugin
 end
 
 return M

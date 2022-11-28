@@ -1,22 +1,22 @@
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
+local ok, nvim_tree = pcall(require, "nvim-tree")
+if not ok then
   return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
+local ok, nvim_tree_config = pcall(require, "nvim-tree.config")
+if not ok then
   return
 end
 
-local icons_status_ok, icons = pcall(require, "nvim-web-devicons")
-if not icons_status_ok then
+local ok, icons = pcall(require, "nvim-web-devicons")
+if not ok then
   return
 end
 icons.setup()
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
-nvim_tree.setup {
+nvim_tree.setup({
   update_focused_file = {
     enable = true,
     update_cwd = true,
@@ -26,7 +26,7 @@ nvim_tree.setup {
   },
   actions = {
     open_file = {
-      quit_on_open = false,
+      quit_on_open = true,
     },
   },
   renderer = {
@@ -72,9 +72,9 @@ nvim_tree.setup {
     side = "right",
     mappings = {
       list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
+        { key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
+        { key = "h", cb = tree_cb("close_node") },
+        { key = "v", cb = tree_cb("vsplit") },
       },
     },
     float = {
@@ -89,4 +89,4 @@ nvim_tree.setup {
       },
     },
   },
-}
+})

@@ -1,5 +1,5 @@
-local status_ok, nightfox = pcall(require, "nightfox")
-if not status_ok then
+local ok, nightfox = pcall(require, "nightfox")
+if not ok then
   return
 end
 

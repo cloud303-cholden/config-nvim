@@ -1,8 +1,8 @@
-local status_ok, go = pcall(require, "go")
-if not status_ok then
+local ok, go = pcall(require, "go")
+if not ok then
   return
 end
 
-go.setup {
+go.setup({
   luasnip = true,
-}
+})

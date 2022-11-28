@@ -1,5 +1,5 @@
-local status_cmp_ok, wk = pcall(require, "which-key")
-if not status_cmp_ok then
+local ok, wk = pcall(require, "which-key")
+if not ok then
   return
 end
 
@@ -22,7 +22,7 @@ local keybindings = {
       a = { ":Alpha<CR>", "Alpha" },
       g = {
         name = "Lazy Git",
-        g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Toggle Lazy Git"},
+        g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Toggle Lazy Git" },
       },
       f = {
         name = "Telescope",
@@ -53,7 +53,10 @@ local keybindings = {
   leader_visual = {
     prefix = "<LEADER>",
     groups = {
-      ["/"] = { "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment Selection"},
+      ["/"] = {
+        "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>",
+        "Comment Selection",
+      },
     },
     options = { mode = "v" },
   },
@@ -85,7 +88,7 @@ local keybindings = {
     groups = {
       ["<"] = { "<gv", "Visual Mode Unindent" },
       [">"] = { ">gv", "Visual Mode Indent" },
-      ["p"] = { '"_dP', "Better Paste" },
+      ["p"] = { "\"_dP", "Better Paste" },
     },
     options = { mode = "v" },
   },
@@ -128,15 +131,15 @@ wk.setup({
     group = "+", -- symbol prepended to a group
   },
   popup_mappings = {
-    scroll_down = '<c-d>', -- binding to scroll down inside the popup
-    scroll_up = '<c-u>', -- binding to scroll up inside the popup
+    scroll_down = "<c-d>", -- binding to scroll down inside the popup
+    scroll_up = "<c-u>", -- binding to scroll up inside the popup
   },
   window = {
     border = "none", -- none, single, double, shadow
     position = "bottom", -- bottom, top
     margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
     padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-    winblend = 0
+    winblend = 0,
   },
   layout = {
     height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -145,7 +148,7 @@ wk.setup({
     align = "left", -- align columns left, center or right
   },
   ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
-  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ "}, -- hide mapping boilerplate
+  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
   triggers = "auto", -- automatically setup triggers
   -- triggers = {"<leader>"} -- or specify a list manually
@@ -169,8 +172,5 @@ for _, k in pairs(keybindings) do
   if k["options"] ~= nil then
     options = vim.tbl_deep_extend("force", options, k["options"])
   end
-  wk.register(
-    k["groups"],
-    options
-  )
+  wk.register(k["groups"], options)
 end
