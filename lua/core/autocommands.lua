@@ -11,8 +11,6 @@ M.load = function()
 	    ]])
     end,
   })
-
-  -- Autocommand that reloads neovim whenever you save the plugins.lua file
 end
 
 return M
