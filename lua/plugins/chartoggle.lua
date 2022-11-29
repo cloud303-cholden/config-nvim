@@ -1,9 +1,13 @@
-local ok, ct = pcall(require, "chartoggle")
-if not ok then
-  return
+local M = {}
+
+M.load = function()
+  local ok, chartoggle = pcall(require, "chartoggle")
+  if not ok then return end
+
+  chartoggle.setup({
+    leader = " ",
+    keys = { ",", ";" },
+  })
 end
 
-ct.setup({
-  leader = " ",
-  keys = { ",", ";" },
-})
+return M

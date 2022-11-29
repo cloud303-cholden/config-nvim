@@ -1,9 +1,7 @@
 local M = {}
 
 local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not ok then
-  return
-end
+if not ok then return end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true

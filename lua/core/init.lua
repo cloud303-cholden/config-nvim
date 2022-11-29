@@ -1,10 +1,10 @@
 local M = require("core.utils.loader"):new()
 
-M.module = ""
+M.module = "core"
 
 M.submodules = {
-  "core",
-  "plugins",
+  "options",
+  "autocommands",
 }
 
-return M:load()
+return M

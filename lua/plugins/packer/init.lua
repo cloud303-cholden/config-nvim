@@ -1,10 +1,10 @@
 local M = require("core.utils.loader"):new()
 
-M.module = ""
+M.module = "plugins.packer"
 
 M.submodules = {
-  "core",
+  "bootstrap",
   "plugins",
 }
 
-return M:load()
+return M

@@ -1,4 +1,6 @@
-local plugins = {
+local M = {}
+
+M.plugins = {
   -- Packer
   { "wbthomason/packer.nvim" },
 
@@ -56,27 +58,36 @@ local plugins = {
   { "simrat39/rust-tools.nvim" },
 }
 
-local ok, packer = pcall(require, "packer")
-if not ok then
-  return
+M.load = function()
+  local ok, packer = pcall(require, "packer")
+  if not ok then return end
+
+  packer.init({
+    display = {
+      open_fn = function()
+        return require("packer.util").float({ border = "rounded" })
+      end,
+    },
+  })
+
+  packer.startup(function(use)
+    for _, plugin in ipairs(M.plugins) do
+      use(plugin)
+    end
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if PACKER_BOOTSTRAP then
+      require("packer").sync()
+    end
+  end)
+
+	vim.cmd([[
+	  augroup packer_user_config
+	    autocmd!
+	    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+	  augroup end
+	]])
 end
 
-packer.init({
-  display = {
-    open_fn = function()
-      return require("packer.util").float({ border = "rounded" })
-    end,
-  },
-})
-
-return packer.startup(function(use)
-  for _, plugin in ipairs(plugins) do
-    use(plugin)
-  end
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
-end)
+return M
