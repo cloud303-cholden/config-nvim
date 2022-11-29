@@ -2,7 +2,9 @@ local M = {}
 
 M.load = function()
   local ok, nightfox = pcall(require, "nightfox")
-  if not ok then return end
+  if not ok then
+    return
+  end
 
   local colorscheme = "nordfox"
 

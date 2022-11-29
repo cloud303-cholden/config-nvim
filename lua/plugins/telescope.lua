@@ -2,7 +2,9 @@ local M = {}
 
 M.load = function()
   local ok, telescope = pcall(require, "telescope")
-  if not ok then return end
+  if not ok then
+    return
+  end
 
   local actions = require("telescope.actions")
 

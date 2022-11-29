@@ -2,7 +2,9 @@ local M = {}
 
 M.load = function()
   local ok, wk = pcall(require, "which-key")
-  if not ok then return end
+  if not ok then
+    return
+  end
 
   local keymap = vim.keymap.set
   local opts = { silent = true }

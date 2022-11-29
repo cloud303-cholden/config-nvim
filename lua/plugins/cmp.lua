@@ -2,10 +2,14 @@ local M = {}
 
 M.load = function()
   local ok, cmp = pcall(require, "cmp")
-  if not ok then return end
+  if not ok then
+    return
+  end
 
   local ok, luasnip = pcall(require, "luasnip")
-  if not ok then return end
+  if not ok then
+    return
+  end
 
   local check_backspace = function()
     local col = vim.fn.col(".") - 1
