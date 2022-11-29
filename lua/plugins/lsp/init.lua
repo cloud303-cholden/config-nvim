@@ -1,10 +1,9 @@
 local M = require("core.utils.loader"):new()
 
-M.module = ""
+M.module = "plugins.lsp"
 
 M.submodules = {
-  "core",
-  "plugins",
+  "mason",
 }
 
-return M:load()
+return M

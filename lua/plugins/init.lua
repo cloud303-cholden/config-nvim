@@ -1,21 +1,24 @@
-local ok, _ = pcall(require, "plugins.notify")
-if not ok then
-  return
-end
+local M = require("core.utils.loader"):new()
 
-require("plugins.cmp")
-require("plugins.comment")
-require("plugins.nvim-tree")
-require("plugins.which-key")
-require("plugins.treesitter")
-require("plugins.telescope")
-require("plugins.project")
-require("plugins.lualine")
-require("plugins.navic")
-require("plugins.go")
-require("plugins.chartoggle")
-require("plugins.toggleterm")
+M.module = "plugins"
 
-require("plugins.lsp.mason")
+M.submodules = {
+  "packer",
+  "notify",
+  "telescope",
+  "cmp",
+  "comment",
+  "nvim-tree",
+  "treesitter",
+  "project",
+  "lualine",
+  "navic",
+  "go",
+  "chartoggle",
+  "toggleterm",
+  "colorschemes",
+  "lsp",
+  "which-key",
+}
 
-require("plugins.colorschemes.nightfox")
+return M

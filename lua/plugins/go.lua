@@ -1,8 +1,12 @@
-local ok, go = pcall(require, "go")
-if not ok then
-  return
+local M = {}
+
+M.load = function()
+  local ok, go = pcall(require, "go")
+  if not ok then return end
+
+  go.setup({
+    luasnip = true,
+  })
 end
 
-go.setup({
-  luasnip = true,
-})
+return M

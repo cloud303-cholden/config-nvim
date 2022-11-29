@@ -1,9 +1,9 @@
 local M = {}
 
-local o = vim.opt
-local g = vim.g
+M.load = function()
+  local o = vim.opt
+  local g = vim.g
 
-function M.setup()
   o.backup = false
   o.hlsearch = true
   o.ignorecase = true
@@ -63,4 +63,4 @@ function M.setup()
   vim.cmd("highlight Normal guifg=none guibg=none")
 end
 
-return M.setup()
+return M

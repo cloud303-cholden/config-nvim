@@ -1,10 +1,9 @@
 local M = require("core.utils.loader"):new()
 
-M.module = ""
+M.module = "plugins.colorschemes"
 
 M.submodules = {
-  "core",
-  "plugins",
+  "nightfox",
 }
 
-return M:load()
+return M
