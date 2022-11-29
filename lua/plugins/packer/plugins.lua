@@ -60,7 +60,9 @@ M.plugins = {
 
 M.load = function()
   local ok, packer = pcall(require, "packer")
-  if not ok then return end
+  if not ok then
+    return
+  end
 
   packer.init({
     display = {
@@ -82,7 +84,7 @@ M.load = function()
     end
   end)
 
-	vim.cmd([[
+  vim.cmd([[
 	  augroup packer_user_config
 	    autocmd!
 	    autocmd BufWritePost plugins.lua source <afile> | PackerSync

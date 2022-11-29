@@ -2,10 +2,14 @@ local M = {}
 
 M.load = function()
   local ok, lualine = pcall(require, "lualine")
-  if not ok then return end
+  if not ok then
+    return
+  end
 
   local ok, navic = pcall(require, "nvim-navic")
-  if not ok then return end
+  if not ok then
+    return
+  end
 
   navic.setup({
     separator = " -> ",

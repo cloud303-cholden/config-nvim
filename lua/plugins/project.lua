@@ -2,7 +2,9 @@ local M = {}
 
 M.load = function()
   local ok, project = pcall(require, "project_nvim")
-  if not ok then return end
+  if not ok then
+    return
+  end
 
   project.setup({})
 

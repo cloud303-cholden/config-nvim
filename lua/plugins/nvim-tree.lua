@@ -2,13 +2,19 @@ local M = {}
 
 M.load = function()
   local ok, nvim_tree = pcall(require, "nvim-tree")
-  if not ok then return end
+  if not ok then
+    return
+  end
 
   local ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-  if not ok then return end
+  if not ok then
+    return
+  end
 
   local ok, icons = pcall(require, "nvim-web-devicons")
-  if not ok then return end
+  if not ok then
+    return
+  end
 
   icons.setup()
 
