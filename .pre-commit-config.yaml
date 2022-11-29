@@ -14,3 +14,11 @@ repos:
     rev: v2.20.0
     hooks:
     -   id: validate_manifest
+-   repo: local
+    hooks:
+    -   id: stylua
+        name: stylua
+        description: Format files with StyLua.
+        entry: stylua .
+        language: system
+        types: [lua]

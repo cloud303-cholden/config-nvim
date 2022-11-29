@@ -1,6 +1,0 @@
-- id: fmt
-  name: fmt
-  description: Format files with StyLua.
-  entry: stylua
-  language: system
-  types: [lua]
