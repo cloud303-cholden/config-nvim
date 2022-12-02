@@ -86,7 +86,7 @@ M.plugins = {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0",
+    commit = "d37fc85a4060352bcd4d8cbed0907cba442deb90",
   },
   -- {
   --   "jose-elias-alvarez/null-ls.nvim",
@@ -126,6 +126,10 @@ M.plugins = {
   {
     "simrat39/rust-tools.nvim",
     -- commit = "",
+  },
+  {
+    "gpanders/editorconfig.nvim",
+    commit = "2af880947129f1ab776b732a4eecb92528472ef5",
   },
 }
 
