@@ -56,7 +56,7 @@ M.load = function()
               version = "Lua 5.1",
             },
             diagnostics = {
-              globals = { "vim" },
+              globals = { "vim", "awesome", "screen", "client", "tag" },
               disable = { "redefined-local" },
             },
             workspace = {
