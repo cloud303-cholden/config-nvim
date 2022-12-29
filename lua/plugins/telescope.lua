@@ -26,6 +26,33 @@ M.load = function()
       },
     },
   })
+
+  local wk = require("which-key")
+  local opts = {
+    mode = "n",
+    prefix = "<leader>",
+    buffer = nil,
+    silent = false,
+    noremap = true,
+    nowait = true,
+  }
+  local mappings = {
+    ["d"] = {
+      name = "[D]ocument",
+      s = {
+        "<CMD>lua require('telescope.builtin').lsp_document_symbols()<CR>",
+        "[S]ymbols",
+      },
+    },
+    ["w"] = {
+      name = "[W]orkspace",
+      s = {
+        "<CMD>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>",
+        "[S]ymbols",
+      },
+    },
+  }
+  wk.register(mappings, opts)
 end
 
 return M
