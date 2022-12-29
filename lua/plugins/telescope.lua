@@ -30,25 +30,29 @@ M.load = function()
   local wk = require("which-key")
   local opts = {
     mode = "n",
-    prefix = "<leader>",
+    prefix = "<LEADER>",
     buffer = nil,
     silent = false,
     noremap = true,
     nowait = true,
   }
   local mappings = {
-    ["d"] = {
-      name = "[D]ocument",
+    f = {
+      name = "Telescope",
+      f = { ":Telescope find_files<CR>", "Files" },
+      p = { ":Telescope projects<CR>", "Projects" },
+      b = { ":Telescope buffers<CR>", "Buffers" },
+      t = { ":Telescope live_grep<CR>", "Live Grep" },
       s = {
-        "<CMD>lua require('telescope.builtin').lsp_document_symbols()<CR>",
-        "[S]ymbols",
-      },
-    },
-    ["w"] = {
-      name = "[W]orkspace",
-      s = {
-        "<CMD>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>",
-        "[S]ymbols",
+        name = "Symbols",
+        d = {
+          ":Telescope lsp_document_symbols<CR>",
+          "Document",
+        },
+        w = {
+          ":Telescope lsp_dynamic_workspace_symbols<CR>",
+          "Workspace",
+        },
       },
     },
   }
