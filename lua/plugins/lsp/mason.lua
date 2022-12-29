@@ -73,27 +73,6 @@ M.load = function()
       })
     end,
     ["rust_analyzer"] = function()
-      local opts = {
-        mode = "n",
-        prefix = "<leader>",
-        buffer = nil,
-        silent = false,
-        noremap = true,
-        nowait = true,
-      }
-
-      local wk = require("which-key")
-      local mappings = {
-        ["r"] = {
-          name = "Rust",
-          c = {
-            ":update<CR>:sp term://cargo check<CR>",
-            "Cargo check",
-          },
-          r = { ":update<CR>:RustRun<CR>", "Cargo run" },
-        },
-      }
-      wk.register(mappings, opts)
       require("rust-tools").setup({
         tools = {
           on_initialized = function()
