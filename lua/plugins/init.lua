@@ -7,7 +7,6 @@ M.submodules = {
   "notify",
   "telescope",
   "cmp",
-  "comment",
   "nvim-tree",
   "treesitter",
   "project",
