@@ -108,7 +108,9 @@ M.load = function()
             auto_focus = true,
           },
           inlay_hints = {
-            auto = false,
+            auto = true,
+            only_current_line = true,
+            show_parameter_hints = false,
           },
         },
         server = {
