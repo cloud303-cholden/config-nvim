@@ -16,6 +16,7 @@ M.load = function()
       enable = true,
     },
     indent = {
+      disable = { "python" },
       enable = true,
     },
   })
