@@ -19,53 +19,16 @@ M.load = function()
     leader_normal = {
       prefix = "<LEADER>",
       groups = {
-        e = { ":NvimTreeToggle<CR>", "Toggle Tree" },
-        a = { ":Alpha<CR>", "Alpha" },
-        g = {
-          name = "Lazy Git",
-          g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Toggle Lazy Git" },
-        },
-        f = {
-          name = "Telescope",
-          f = { ":Telescope find_files<CR>", "Files" },
-          p = { ":Telescope projects<CR>", "Projects" },
-          b = { ":Telescope buffers<CR>", "Buffers" },
-          t = { ":Telescope live_grep<CR>", "Live Grep" },
-        },
-        d = {
-          name = "DAP",
-          b = { "<CMD>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
-          c = { "<CMD>lua require'dap'.continue()<CR>", "Continue" },
-          i = { "<CMD>lua require'dap'.step_into()<CR>", "Step Into" },
-          o = { "<CMD>lua require'dap'.step_over()<CR>", "Step Over" },
-          O = { "<CMD>lua require'dap'.step_out()<CR>", "Step Out" },
-          r = { "<CMD>lua require'dap'.repl.toggle()<CR>", "Toggle REPL" },
-          l = { "<CMD>lua require'dap'.run_last()<CR>", "Run Last" },
-          u = { "<CMD>lua require'dapui'.toggle()<CR>", "Toggle UI" },
-          t = { "<CMD>lua require'dap'.terminate()<CR>", "Terminate" },
-        },
-        ["/"] = { "<CMD>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment Line" },
-        ["w"] = { "<CMD>w<CR>", "Write" },
-        ["wq"] = { "<CMD>wqa<CR>", "Write All and Quit" },
-        ["q"] = { "<CMD>qa<CR>", "Quit All" },
-        ["h"] = { "<CMD>nohlsearch<CR>", "No Highlight Search" },
+        ["w"] = { ":w<CR>", "Write" },
+        ["wq"] = { ":wqa<CR>", "Write All and Quit" },
+        ["q"] = { ":qa<CR>", "Quit All" },
       },
-    },
-    leader_visual = {
-      prefix = "<LEADER>",
-      groups = {
-        ["/"] = {
-          "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>",
-          "Comment Selection",
-        },
-      },
-      options = { mode = "v" },
     },
     none_normal = {
       prefix = "",
       groups = {
-        ["<S-l>"] = { "<CMD>bnext<CR>", "Next Buffer" },
-        ["<S-h>"] = { "<CMD>bprevious<CR>", "Previous Buffer" },
+        ["<S-l>"] = { ":bnext<CR>", "Next Buffer" },
+        ["<S-h>"] = { ":bprevious<CR>", "Previous Buffer" },
         ["<C-h>"] = { "<C-w>h", "Focus Left Window" },
         ["<C-j"] = { "<C-w>j", "Focus Lower Window" },
         ["<C-k>"] = { "<C-w>k", "Focus Upper Window" },
@@ -74,7 +37,7 @@ M.load = function()
         ["<C-Down>"] = { ":resize +2<CR>", "Increase Window Height" },
         ["<C-Left>"] = { ":vertical resize -2<CR>", "Decrease Window Width" },
         ["<C-Right>"] = { ":vertical resize +2<CR>", "Increase Window Width" },
-        ["<S-q>"] = { "<CMD>bdelete<CR>", "Delete Buffer" },
+        ["<S-q>"] = { ":bdelete<CR>", "Delete Buffer" },
       },
     },
     none_insert = {
