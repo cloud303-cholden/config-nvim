@@ -79,7 +79,7 @@ M.load = function()
       side = "right",
       mappings = {
         list = {
-          { key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
+          { key = "l", cb = tree_cb("edit") },
           { key = "h", cb = tree_cb("close_node") },
           { key = "v", cb = tree_cb("vsplit") },
         },
@@ -97,6 +97,20 @@ M.load = function()
       },
     },
   })
+
+  local wk = require("which-key")
+  local opts = {
+    mode = "n",
+    prefix = "<LEADER>",
+    buffer = nil,
+    silent = false,
+    noremap = true,
+    nowait = true,
+  }
+  local mappings = {
+    e = { ":NvimTreeToggle<CR>", "Toggle Tree" },
+  }
+  wk.register(mappings, opts)
 end
 
 return M
