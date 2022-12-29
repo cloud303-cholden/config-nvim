@@ -47,6 +47,10 @@ M.plugins = {
     -- commit = "",
   },
   {
+    "lukas-reineke/indent-blankline.nvim",
+    commit = "c4c203c3e8a595bc333abaf168fcb10c13ed5fb7",
+  },
+  {
     "akinsho/toggleterm.nvim",
     tag = "2.3.0",
   },
@@ -126,6 +130,10 @@ M.plugins = {
   {
     "simrat39/rust-tools.nvim",
     -- commit = "",
+  },
+  {
+    "windwp/nvim-autopairs",
+    commit = "03580d758231956d33c8dd91e2be195106a79fa4",
   },
   {
     "gpanders/editorconfig.nvim",

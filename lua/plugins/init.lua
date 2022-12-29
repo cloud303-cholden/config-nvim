@@ -15,6 +15,8 @@ M.submodules = {
   "navic",
   "go",
   "chartoggle",
+  "indent_blankline",
+  "autopairs",
   "toggleterm",
   "colorschemes",
   "lsp",
