@@ -42,71 +42,13 @@ M.load = function()
       })
     end,
     ["sumneko_lua"] = function()
-      lspconfig.sumneko_lua.setup({
-        on_attach = require("plugins.lsp.handlers").on_attach,
-        capabilities = require("plugins.lsp.handlers").capabilities,
-        cmd = {
-          "lua-language-server",
-          "-E",
-          os.getenv("HOME") .. "/.lua/lsp/main.lua",
-        },
-        settings = {
-          Lua = {
-            runtime = {
-              version = "Lua 5.1",
-            },
-            diagnostics = {
-              globals = { "vim", "awesome", "screen", "client", "tag" },
-              disable = { "redefined-local" },
-            },
-            workspace = {
-              library = {
-                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                [vim.fn.stdpath("config") .. "/lua"] = true,
-              },
-            },
-            telemetry = {
-              enable = false,
-            },
-          },
-        },
-      })
+      local lua_settings = require("plugins.lsp.settings.lua").settings
+      lspconfig.sumneko_lua.setup(lua_settings)
     end,
     ["rust_analyzer"] = function()
-      require("rust-tools").setup({
-        tools = {
-          on_initialized = function()
-            vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "CursorHold", "InsertLeave" }, {
-              pattern = { "*.rs" },
-              callback = function()
-                vim.lsp.codelens.refresh()
-              end,
-            })
-          end,
-          hover_actions = {
-            auto_focus = true,
-          },
-          inlay_hints = {
-            auto = true,
-            only_current_line = true,
-            show_parameter_hints = false,
-          },
-        },
-        server = {
-          on_attach = require("plugins.lsp.handlers").on_attach,
-          capabilities = require("plugins.lsp.handlers").capabilities,
-          settings = {
-            ["rust-analyzer"] = {
-              lens = {
-                enable = true,
-              },
-              checkOnSave = {
-                command = "clippy",
-              },
-            },
-          },
-        },
-      })
+      local rust = require("plugins.lsp.settings.rust")
+      rust.load()
+      rust.register_mappings()
     end,
   })
 end
