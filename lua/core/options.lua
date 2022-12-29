@@ -5,7 +5,7 @@ M.load = function()
   local g = vim.g
 
   o.backup = false
-  o.hlsearch = true
+  o.hlsearch = false
   o.ignorecase = true
   o.autoread = true
   o.showmode = false
