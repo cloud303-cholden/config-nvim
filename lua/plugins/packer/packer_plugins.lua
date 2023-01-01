@@ -39,6 +39,10 @@ M.plugins = {
     -- commit = "",
   },
   {
+    "numToStr/Comment.nvim",
+    commit = "7bb563ff2d811a63b207e9de63e3e9c0877cb6d5",
+  },
+  {
     "saifulapm/chartoggle.nvim",
     -- commit = "",
   },
