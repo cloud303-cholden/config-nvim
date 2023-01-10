@@ -22,6 +22,7 @@ M.load = function()
         ["w"] = { ":w<CR>", "Write" },
         ["wq"] = { ":wqa<CR>", "Write All and Quit" },
         ["q"] = { ":qa<CR>", "Quit All" },
+        ["n"] = { ":set nu!<CR>", "Toggle Line Numbers" },
       },
     },
     none_normal = {
