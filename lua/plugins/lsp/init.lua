@@ -4,6 +4,7 @@ M.module = "plugins.lsp"
 
 M.submodules = {
   "mason",
+  "handlers",
 }
 
 return M
