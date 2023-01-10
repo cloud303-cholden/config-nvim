@@ -139,6 +139,10 @@ M.plugins = {
     "gpanders/editorconfig.nvim",
     commit = "2af880947129f1ab776b732a4eecb92528472ef5",
   },
+  {
+    "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
+    commit = "a7839742dadf90177f3a9ea4747e79f404d10af3",
+  },
 }
 
 M.load = function()

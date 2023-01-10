@@ -18,6 +18,7 @@ M.submodules = {
   "indent_blankline",
   "autopairs",
   "toggleterm",
+  "toggle-lsp-diag",
   "colorschemes",
   "lsp",
   "which-key",
