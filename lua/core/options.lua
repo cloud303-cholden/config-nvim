@@ -60,7 +60,6 @@ M.load = function()
 
   vim.cmd("au FocusGained * :checktime")
   vim.cmd(":set nosplitright")
-  vim.cmd("highlight Normal guifg=none guibg=none")
 end
 
 return M
