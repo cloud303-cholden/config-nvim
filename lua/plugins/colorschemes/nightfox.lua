@@ -21,6 +21,7 @@ M.load = function()
   })
 
   vim.cmd("colorscheme " .. colorscheme)
+  vim.cmd("highlight NormalFloat guifg=none guibg=none")
 end
 
 return M
