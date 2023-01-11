@@ -17,6 +17,7 @@ M.submodules = {
   "chartoggle",
   "indent_blankline",
   "autopairs",
+  "surround",
   "toggleterm",
   "toggle-lsp-diag",
   "colorschemes",

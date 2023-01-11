@@ -143,6 +143,10 @@ M.plugins = {
     "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
     commit = "a7839742dadf90177f3a9ea4747e79f404d10af3",
   },
+  {
+    "kylechui/nvim-surround",
+    commit = "ad56e6234bf42fb7f7e4dccc7752e25abd5ec80e",
+  },
 }
 
 M.load = function()
