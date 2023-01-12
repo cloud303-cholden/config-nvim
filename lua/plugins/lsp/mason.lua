@@ -34,6 +34,10 @@ M.load = function()
     return
   end
 
+  lspconfig.terraformls.setup({
+    cmd = { "terraform-ls", "serve" },
+  })
+
   mason_lspconfig.setup_handlers({
     function(server_name) -- default handler (optional)
       require("lspconfig")[server_name].setup({
@@ -49,6 +53,10 @@ M.load = function()
       local rust = require("plugins.lsp.settings.rust")
       rust.load()
       rust.register_mappings()
+    end,
+    ["terraformls"] = function()
+      local settings = require("plugins.lsp.settings.tf").settings
+      lspconfig.terraformls.setup(settings)
     end,
   })
 end
