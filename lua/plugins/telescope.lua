@@ -16,13 +16,14 @@ M.load = function()
       layout_strategy = "vertical",
       scroll_strategy = "limit",
       preview = { hide_on_startup = false },
+      initial_mode = "normal",
       vimgrep_arguments = {
         "rg",
         "--no-heading",
         "--with-filename",
         "--line-number",
         "--column",
-        "--smart-case"
+        "--smart-case",
       },
       file_ignore_patterns = {
         "vendor/*",
@@ -84,9 +85,14 @@ M.load = function()
           ["<C-j>"] = actions.move_selection_next,
           ["<C-k>"] = actions.move_selection_previous,
         },
+        n = {
+          ["q"] = require("telescope.actions").close,
+        },
       },
     },
   })
+
+  telescope.load_extension("live_grep_args")
 
   local wk = require("which-key")
   local opts = {
@@ -105,6 +111,10 @@ M.load = function()
       b = { ":Telescope buffers<CR>", "Buffers" },
       t = { ":Telescope live_grep<CR>", "Live Grep" },
       r = { ":Telescope resume<CR>", "Resume" },
+      g = {
+        ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+        "Live Grep Args",
+      },
       s = {
         name = "Symbols",
         d = {
