@@ -9,6 +9,9 @@ M.load = function()
   indent_blankline.setup({
     char = "┊",
     show_trailing_blankline_indent = false,
+    char_highlight_list = {
+      "Comment",
+    },
   })
 end
 
