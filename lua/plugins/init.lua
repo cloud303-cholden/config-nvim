@@ -3,7 +3,8 @@ local M = require("core.utils.loader"):new()
 M.module = "plugins"
 
 M.submodules = {
-  "packer",
+  -- "packer",
+  "lazy",
   "notify",
   "telescope",
   "cmp",
