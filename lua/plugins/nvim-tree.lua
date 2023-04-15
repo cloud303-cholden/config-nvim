@@ -27,9 +27,10 @@ M.load = function()
     },
     filters = {
       dotfiles = false,
+      exclude = { ".env", ".envrc" },
     },
     git = {
-      ignore = false,
+      ignore = true,
     },
     actions = {
       open_file = {
