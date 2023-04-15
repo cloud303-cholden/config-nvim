@@ -2,58 +2,65 @@ local M = {}
 
 M.plugins = {
   {
-    "wbthomason/packer.nvim",
-    commit = "04e45a888ff9a20fa15c1756c3a78ea50990ec17",
-  },
-  {
     "rcarriga/nvim-notify",
     commit = "30e6b5a710319e354c3e362deb7819cb2135c417",
   },
   {
     "kyazdani42/nvim-tree.lua",
-    -- commit = "",
+    commit = "215b29bfad74518442621b9d0483a621483b066b",
+    branch = "master",
   },
   {
     "kyazdani42/nvim-web-devicons",
-    -- commit = "",
+    commit = "a421d183ef37dfa13f51a5805bed2381aebf9080",
+    branch = "master",
   },
   {
     "nvim-lualine/lualine.nvim",
-    -- commit = "",
+    commit = "0050b308552e45f7128f399886c86afefc3eb988",
+    branch = "master",
   },
   {
     "SmiteshP/nvim-navic",
     dependencies = { "neovim/nvim-lspconfig", "nvim-lualine/lualine.nvim" },
-    -- commit = "",
+    commit = "11e08391eeed00effa85ca24ff9d1e0472cbcd6a",
+    branch = "master",
   },
   {
     "EdenEast/nightfox.nvim",
     lazy = false,
-    -- commit = "",
+    commit = "aa793975d10dda69817190faea84e28eeb176934",
+    branch = "main",
   },
   {
     "folke/which-key.nvim",
-    -- commit = "",
+    commit = "684e96c5e8477f1ee9b3f2e9a12d802fd12c5531",
+    branch = "main",
   },
   {
     "nvim-lua/plenary.nvim",
-    -- commit = "",
+    commit = "9a0d3bf7b832818c042aaf30f692b081ddd58bd9",
+    branch = "master",
   },
   {
     "numToStr/Comment.nvim",
     commit = "7bb563ff2d811a63b207e9de63e3e9c0877cb6d5",
+    branch = "master",
   },
   {
     "saifulapm/chartoggle.nvim",
-    -- commit = "",
+    commit = "e96641c7ee7972033f832b7f4af78d9ed04b130f",
+    branch = "main",
   },
   {
     "lukas-reineke/indent-blankline.nvim",
     commit = "c4c203c3e8a595bc333abaf168fcb10c13ed5fb7",
+    branch = "master",
   },
   {
     "akinsho/toggleterm.nvim",
-    tag = "2.3.0",
+    commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda",
+    branch = "main",
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -107,12 +114,6 @@ M.plugins = {
     dependencies = { "neovim/nvim-lspconfig" },
     -- commit = "",
   },
-  -- {
-  --   "jayp0521/mason-null-ls.nvim",
-  --   after = { "null-ls.nvim", "mason.nvim" },
-  --   requires = { "jose-elias-alvarez/null-ls.nvim", "williamboman/mason.nvim" },
-  --   commit = "",
-  -- },
   {
     "neovim/nvim-lspconfig",
     -- commit = "",
