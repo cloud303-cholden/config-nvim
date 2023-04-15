@@ -44,7 +44,7 @@ M.load = function()
   o.clipboard = "unnamedplus"
   o.guifont = "monospace:h17"
   o.fcs = "eob: "
-  o.shell = "fish"
+  o.shell = "zsh"
   o.guicursor = "i:block"
 
   o.colorcolumn = { 99 }
