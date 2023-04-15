@@ -24,7 +24,7 @@ M.load = function()
 
   mason_lspconfig.setup({
     ensure_installed = {
-      "sumneko_lua",
+      "lua_ls",
       "gopls",
     },
   })
@@ -45,9 +45,9 @@ M.load = function()
         capabilities = require("plugins.lsp.handlers").capabilities,
       })
     end,
-    ["sumneko_lua"] = function()
+    ["lua_ls"] = function()
       local lua_settings = require("plugins.lsp.settings.lua").settings
-      lspconfig.sumneko_lua.setup(lua_settings)
+      lspconfig.lua_ls.setup(lua_settings)
     end,
     ["rust_analyzer"] = function()
       local rust = require("plugins.lsp.settings.rust")
