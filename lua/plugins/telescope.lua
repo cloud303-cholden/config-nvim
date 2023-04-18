@@ -65,6 +65,7 @@ M.load = function()
         "%.jar",
         "%.docx",
         "%.met",
+        "%.po",
         "smalljre_*/*",
         ".vale/",
         "%.burp",
