@@ -11,6 +11,7 @@ M.load = function()
     ignore_install = { "" },
     highlight = {
       enable = true,
+      disable = { "json" },
     },
     autopairs = {
       enable = true,
