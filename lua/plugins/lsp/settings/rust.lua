@@ -58,6 +58,9 @@ M.load = function()
           checkOnSave = {
             command = "clippy",
           },
+          diagnostics = {
+            disabled = { "unresolved-proc-macro" },
+          },
         },
       },
     },
