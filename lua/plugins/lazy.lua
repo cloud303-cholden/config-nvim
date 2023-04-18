@@ -19,28 +19,32 @@ M.plugins = {
     "nvim-lualine/lualine.nvim",
     commit = "0050b308552e45f7128f399886c86afefc3eb988",
     branch = "master",
+    event = "VeryLazy",
   },
   {
     "SmiteshP/nvim-navic",
     dependencies = { "neovim/nvim-lspconfig", "nvim-lualine/lualine.nvim" },
     commit = "11e08391eeed00effa85ca24ff9d1e0472cbcd6a",
     branch = "master",
+    lazy = true,
   },
   {
     "EdenEast/nightfox.nvim",
-    lazy = false,
     commit = "aa793975d10dda69817190faea84e28eeb176934",
     branch = "main",
+    lazy = true,
   },
   {
     "folke/which-key.nvim",
     commit = "684e96c5e8477f1ee9b3f2e9a12d802fd12c5531",
     branch = "main",
+    event = "VeryLazy",
   },
   {
     "nvim-lua/plenary.nvim",
     commit = "9a0d3bf7b832818c042aaf30f692b081ddd58bd9",
     branch = "master",
+    lazy = true,
   },
   {
     "numToStr/Comment.nvim",
@@ -56,6 +60,7 @@ M.plugins = {
     "lukas-reineke/indent-blankline.nvim",
     commit = "c4c203c3e8a595bc333abaf168fcb10c13ed5fb7",
     branch = "master",
+    event = { "BufReadPost", "BufNewFile" },
   },
   {
     "akinsho/toggleterm.nvim",
@@ -75,19 +80,23 @@ M.plugins = {
   {
     "hrsh7th/nvim-cmp",
     -- commit = "",
+    event = "InsertEnter",
   },
   {
     "hrsh7th/cmp-buffer",
     -- commit = "",
+    event = "InsertEnter",
   },
   {
     "hrsh7th/cmp-path",
     -- commit = "",
+    event = "InsertEnter",
   },
   {
     "saadparwaiz1/cmp_luasnip",
     dependencies = { "L3MON4D3/LuaSnip" },
     -- commit = "",
+    event = "InsertEnter",
   },
   {
     "hrsh7th/cmp-nvim-lsp",
@@ -100,6 +109,7 @@ M.plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     commit = "d37fc85a4060352bcd4d8cbed0907cba442deb90",
+    event = { "BufReadPost", "BufNewFile" },
   },
   -- {
   --   "jose-elias-alvarez/null-ls.nvim",
@@ -125,18 +135,22 @@ M.plugins = {
   {
     "ray-x/go.nvim",
     -- commit = "",
+    lazy = true,
   },
   {
     "ray-x/guihua.lua",
     -- commit = "",
+    lazy = true,
   },
   {
     "simrat39/rust-tools.nvim",
     -- commit = "",
+    lazy = true,
   },
   {
     "windwp/nvim-autopairs",
     commit = "03580d758231956d33c8dd91e2be195106a79fa4",
+    event = "InsertEnter",
   },
   {
     "gpanders/editorconfig.nvim",
@@ -160,7 +174,7 @@ M.load = function()
       "clone",
       "--filter=blob:none",
       "https://github.com/folke/lazy.nvim.git",
-      "--branch=stable", -- latest stable release
+      "--branch=stable",
       lazypath,
     })
   end
