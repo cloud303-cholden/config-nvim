@@ -26,7 +26,7 @@ M.load = function()
   o.number = false
 
   o.pumheight = 10
-  o.cmdheight = 1
+  o.cmdheight = 0
   o.conceallevel = 0
   o.showtabline = 0
   o.timeoutlen = 1000

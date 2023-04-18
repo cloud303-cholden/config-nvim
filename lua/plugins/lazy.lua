@@ -6,11 +6,6 @@ M.plugins = {
     commit = "30e6b5a710319e354c3e362deb7819cb2135c417",
   },
   {
-    "kyazdani42/nvim-tree.lua",
-    commit = "215b29bfad74518442621b9d0483a621483b066b",
-    branch = "master",
-  },
-  {
     "kyazdani42/nvim-web-devicons",
     commit = "a421d183ef37dfa13f51a5805bed2381aebf9080",
     branch = "master",
@@ -73,9 +68,15 @@ M.plugins = {
     -- commit = "",
   },
   {
-    "ahmedkhalf/project.nvim",
+    "nvim-telescope/telescope-project.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
-    -- commit = "",
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
   },
   {
     "hrsh7th/nvim-cmp",
@@ -111,10 +112,6 @@ M.plugins = {
     commit = "d37fc85a4060352bcd4d8cbed0907cba442deb90",
     event = { "BufReadPost", "BufNewFile" },
   },
-  -- {
-  --   "jose-elias-alvarez/null-ls.nvim",
-  --   commit = "",
-  -- },
   {
     "williamboman/mason.nvim",
     -- commit = "",

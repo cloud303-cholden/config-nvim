@@ -7,6 +7,8 @@ M.load = function()
   end
 
   local actions = require("telescope.actions")
+  local project_actions = require("telescope._extensions.project.actions")
+  local fb_actions = require("telescope._extensions.file_browser.actions")
 
   telescope.setup({
     defaults = {
@@ -86,13 +88,34 @@ M.load = function()
           ["<C-k>"] = actions.move_selection_previous,
         },
         n = {
-          ["q"] = require("telescope.actions").close,
+          ["q"] = actions.close,
+          ["o"] = actions.select_default,
         },
       },
+    },
+    extensions = {
+      file_browser = {
+        hijack_netrw = true,
+        quiet = true,
+        mappings = {
+          ["n"] = {
+            ["h"] = fb_actions.goto_parent_dir,
+            ["l"] = fb_actions.change_cwd,
+          },
+        },
+      },
+      -- project = {
+      --   on_project_selected = function(prompt_bufnr)
+      --     project_actions.change_working_directory(prompt_bufnr, false)
+      --     project_actions.find_project_files(prompt_bufnr, false)
+      --   end
+      -- },
     },
   })
 
   telescope.load_extension("live_grep_args")
+  telescope.load_extension("file_browser")
+  telescope.load_extension("project")
 
   local wk = require("which-key")
   local opts = {
@@ -104,10 +127,14 @@ M.load = function()
     nowait = true,
   }
   local mappings = {
+    e = {
+      ":Telescope file_browser<CR>",
+      "File Browser",
+    },
     f = {
       name = "Telescope",
       f = { ":Telescope find_files<CR>", "Files" },
-      p = { ":Telescope projects<CR>", "Projects" },
+      p = { ":Telescope project<CR>", "Projects" },
       b = { ":Telescope buffers<CR>", "Buffers" },
       t = { ":Telescope live_grep<CR>", "Live Grep" },
       r = { ":Telescope resume<CR>", "Resume" },
