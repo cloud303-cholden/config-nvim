@@ -19,6 +19,15 @@ M.load = function()
       vim.lsp.buf.format()
     end,
   })
+
+  -- Autoformat JSON files
+  vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = { "*.json" },
+    callback = function(ev)
+      vim.cmd(string.format("silent !jq . %s | sponge %s", ev.file, ev.file))
+      vim.cmd("silent edit")
+    end,
+  })
 end
 
 return M
