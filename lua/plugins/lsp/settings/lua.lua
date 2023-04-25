@@ -6,7 +6,7 @@ M.settings = {
   cmd = {
     "lua-language-server",
     "-E",
-    os.getenv("HOME") .. "/.lua/lsp/main.lua",
+    os.getenv("HOME") .. "/.lua/lua_ls/main.lua",
   },
   settings = {
     Lua = {
