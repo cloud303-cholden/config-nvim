@@ -6,10 +6,10 @@ M.load = function()
     return
   end
 
-  local ok, luasnip = pcall(require, "luasnip")
-  if not ok then
-    return
-  end
+  -- local ok, luasnip = pcall(require, "luasnip")
+  -- if not ok then
+  --   return
+  -- end
 
   local check_backspace = function()
     local col = vim.fn.col(".") - 1
@@ -17,16 +17,16 @@ M.load = function()
   end
 
   cmp.setup({
-    snippet = {
-      expand = function(args)
-        luasnip.lsp_expand(args.body)
-      end,
-    },
+    -- snippet = {
+    --   expand = function(args)
+    --     luasnip.lsp_expand(args.body)
+    --   end,
+    -- },
     sources = {
       { name = "nvim_lsp" },
       { name = "nvim_lua" },
       { name = "buffer" },
-      { name = "luasnip" },
+      -- { name = "luasnip" },
       { name = "path" },
     },
     mapping = cmp.mapping.preset.insert({
@@ -45,10 +45,10 @@ M.load = function()
       ["<C-Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
-        elseif luasnip.expandable() then
-          luasnip.expand()
-        elseif luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
+        -- elseif luasnip.expandable() then
+        --   luasnip.expand()
+        -- elseif luasnip.expand_or_jumpable() then
+        --   luasnip.expand_or_jump()
         elseif check_backspace() then
           fallback()
         else
@@ -61,8 +61,8 @@ M.load = function()
       ["<S-Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_prev_item()
-        elseif luasnip.jumpable(-1) then
-          luasnip.jump(-1)
+        -- elseif luasnip.jumpable(-1) then
+        --   luasnip.jump(-1)
         else
           fallback()
         end

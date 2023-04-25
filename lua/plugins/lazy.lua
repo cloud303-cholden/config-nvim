@@ -6,6 +6,11 @@ M.plugins = {
     commit = "30e6b5a710319e354c3e362deb7819cb2135c417",
   },
   {
+    "goolord/alpha-nvim",
+    commit = "87c204040e3f5d4c1c95067b35905d8f8a2f2545",
+    dependencies = { "kyazdani42/nvim-web-devicons" },
+  },
+  {
     "kyazdani42/nvim-web-devicons",
     commit = "a421d183ef37dfa13f51a5805bed2381aebf9080",
     branch = "master",
@@ -68,15 +73,11 @@ M.plugins = {
     -- commit = "",
   },
   {
-    "nvim-telescope/telescope-project.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
+    "ahmedkhalf/project.nvim",
   },
   {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim",
-    },
+    "ms-jpq/chadtree",
+    commit = "bac02812a4ccb695a02dcc46ed6b33d56b31b147",
   },
   {
     "hrsh7th/nvim-cmp",
@@ -93,12 +94,12 @@ M.plugins = {
     -- commit = "",
     event = "InsertEnter",
   },
-  {
-    "saadparwaiz1/cmp_luasnip",
-    dependencies = { "L3MON4D3/LuaSnip" },
-    -- commit = "",
-    event = "InsertEnter",
-  },
+  -- {
+  --   "saadparwaiz1/cmp_luasnip",
+  --   dependencies = { "L3MON4D3/LuaSnip" },
+  --   -- commit = "",
+  --   event = "InsertEnter",
+  -- },
   {
     "hrsh7th/cmp-nvim-lsp",
     -- commit = "",
@@ -110,7 +111,7 @@ M.plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     commit = "d37fc85a4060352bcd4d8cbed0907cba442deb90",
-    event = { "BufReadPost", "BufNewFile" },
+    -- event = { "BufReadPost", "BufNewFile" },
   },
   {
     "williamboman/mason.nvim",
@@ -125,10 +126,10 @@ M.plugins = {
     "neovim/nvim-lspconfig",
     -- commit = "",
   },
-  {
-    "L3MON4D3/LuaSnip",
-    -- commit = "",
-  },
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  --   -- commit = "",
+  -- },
   {
     "ray-x/go.nvim",
     -- commit = "",

@@ -6,9 +6,7 @@ M.load = function()
     return
   end
 
-  go.setup({
-    luasnip = true,
-  })
+  go.setup({})
 end
 
 return M
