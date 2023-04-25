@@ -1,5 +1,5 @@
 ## Prerequisites
-- `neovim 0.7`
+- `neovim 0.9`
 - `rust-analyzer`
 
 ## Installation
