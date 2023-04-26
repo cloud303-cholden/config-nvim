@@ -6,7 +6,13 @@ M.load = function()
     return
   end
 
-  go.setup({})
+  go.setup({
+    lsp_inlay_hints = {
+      enable = true,
+      only_current_line = true,
+    },
+    luasnip = true,
+  })
 end
 
 return M

@@ -57,6 +57,10 @@ M.load = function()
       local settings = require("plugins.lsp.settings.tf").settings
       lspconfig.terraformls.setup(settings)
     end,
+    ["gopls"] = function()
+      local settings = require("plugins.lsp.settings.go").settings
+      lspconfig.gopls.setup(settings)
+    end,
   })
 end
 
