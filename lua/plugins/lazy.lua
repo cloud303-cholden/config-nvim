@@ -94,12 +94,12 @@ M.plugins = {
     -- commit = "",
     event = "InsertEnter",
   },
-  -- {
-  --   "saadparwaiz1/cmp_luasnip",
-  --   dependencies = { "L3MON4D3/LuaSnip" },
-  --   -- commit = "",
-  --   event = "InsertEnter",
-  -- },
+  {
+    "saadparwaiz1/cmp_luasnip",
+    dependencies = { "L3MON4D3/LuaSnip" },
+    event = "InsertEnter",
+    -- commit = "",
+  },
   {
     "hrsh7th/cmp-nvim-lsp",
     -- commit = "",
@@ -111,7 +111,6 @@ M.plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     commit = "d37fc85a4060352bcd4d8cbed0907cba442deb90",
-    -- event = { "BufReadPost", "BufNewFile" },
   },
   {
     "williamboman/mason.nvim",
@@ -126,14 +125,20 @@ M.plugins = {
     "neovim/nvim-lspconfig",
     -- commit = "",
   },
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   -- commit = "",
-  -- },
+  {
+    "L3MON4D3/LuaSnip",
+    -- commit = "",
+  },
   {
     "ray-x/go.nvim",
     -- commit = "",
-    lazy = true,
+    dependencies = {
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    event = {"CmdlineEnter"},
+    ft = {"go", "gomod"},
   },
   {
     "ray-x/guihua.lua",
