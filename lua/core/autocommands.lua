@@ -11,14 +11,6 @@ M.load = function()
 	    ]])
     end,
   })
-
-  -- Autoformat TF files
-  vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = { "*.tf", "*.tfvars" },
-    callback = function()
-      vim.lsp.buf.format()
-    end,
-  })
 end
 
 return M

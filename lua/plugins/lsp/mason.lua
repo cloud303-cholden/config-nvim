@@ -46,8 +46,9 @@ M.load = function()
       rust.register_mappings()
     end,
     ["terraformls"] = function()
-      local tf_settings = require("plugins.lsp.settings.tf").settings
-      lspconfig.terraformls.setup(tf_settings)
+      local tf = require("plugins.lsp.settings.tf")
+      lspconfig.terraformls.setup(tf.settings)
+      tf.load()
     end,
     ["gopls"] = function()
       local go = require("plugins.lsp.settings.go")
