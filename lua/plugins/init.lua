@@ -4,25 +4,23 @@ M.module = "plugins"
 
 M.submodules = {
   "settings",
-  "notify",
-  "dashboard",
-  "project",
-  "telescope",
-  "cmp",
-  "comment",
-  "treesitter",
-  "statusline",
-  "tree",
-  "icons",
-  "chartoggle",
-  "indent_blankline",
-  "autopairs",
-  "surround",
-  "terminal",
-  "headlines",
+  "notifications",
+
   "colorschemes",
   "lsp",
-  "which-key",
+
+  "appearance",
+  "completions",
+  "dashboard",
+  "editing",
+  "filetree",
+  "icons",
+  "keymappings",
+  "project",
+  "search",
+  "statusline",
+  "terminal",
+  "treesitter",
 }
 
 return M
