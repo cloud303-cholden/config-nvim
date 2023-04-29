@@ -1,28 +1,5 @@
 local M = {}
 
-M.register_mappings = function()
-  local ok, wk = pcall(require, "which-key")
-  if not ok then
-    return
-  end
-
-  local opts = {
-    mode = "n",
-    prefix = "<LEADER>",
-    buffer = nil,
-    silent = false,
-    noremap = true,
-    nowait = true,
-  }
-  local mappings = {
-    r = {
-      name = "Rust",
-      h = { ":lua require('rust-tools').hover_actions.hover_actions()<CR>", "Hover Actions" },
-    },
-  }
-  wk.register(mappings, opts)
-end
-
 M.load = function()
   local ok, rust_tools = pcall(require, "rust-tools")
   if not ok then
@@ -65,6 +42,27 @@ M.load = function()
       },
     },
   })
+
+  local ok, wk = pcall(require, "which-key")
+  if not ok then
+    return
+  end
+
+  local opts = {
+    mode = "n",
+    prefix = "<LEADER>",
+    buffer = nil,
+    silent = false,
+    noremap = true,
+    nowait = true,
+  }
+  local mappings = {
+    r = {
+      name = "Rust",
+      h = { ":lua require('rust-tools').hover_actions.hover_actions()<CR>", "Hover Actions" },
+    },
+  }
+  wk.register(mappings, opts)
 end
 
 return M

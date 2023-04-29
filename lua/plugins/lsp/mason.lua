@@ -43,7 +43,6 @@ M.load = function()
     ["rust_analyzer"] = function()
       local rust = require("plugins.lsp.settings.rust")
       rust.load()
-      rust.register_mappings()
     end,
     ["terraformls"] = function()
       local tf = require("plugins.lsp.settings.tf")
