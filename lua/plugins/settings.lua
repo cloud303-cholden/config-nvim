@@ -24,15 +24,38 @@ M.plugins = {
   {
     "SmiteshP/nvim-navic",
     dependencies = { "neovim/nvim-lspconfig", "nvim-lualine/lualine.nvim" },
-    commit = "11e08391eeed00effa85ca24ff9d1e0472cbcd6a",
     branch = "master",
     lazy = true,
+  },
+  {
+    "SmiteshP/nvim-navbuddy",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "SmiteshP/nvim-navic",
+      "MunifTanjim/nui.nvim",
+      "numToStr/Comment.nvim",
+      "nvim-telescope/telescope.nvim",
+    }
   },
   {
     "EdenEast/nightfox.nvim",
     commit = "aa793975d10dda69817190faea84e28eeb176934",
     branch = "main",
     lazy = true,
+  },
+  {
+    "shaunsingh/nord.nvim",
+  },
+  {
+    "yamatsum/nvim-nonicons",
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+  },
+  {
+    "lukas-reineke/headlines.nvim",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = true,
   },
   {
     "folke/which-key.nvim",
@@ -75,10 +98,10 @@ M.plugins = {
   {
     "ahmedkhalf/project.nvim",
   },
-  {
-    "ms-jpq/chadtree",
-    commit = "bac02812a4ccb695a02dcc46ed6b33d56b31b147",
-  },
+  -- {
+  --   "ms-jpq/chadtree",
+  --   commit = "bac02812a4ccb695a02dcc46ed6b33d56b31b147",
+  -- },
   {
     "hrsh7th/nvim-cmp",
     -- commit = "",
@@ -126,6 +149,9 @@ M.plugins = {
     -- commit = "",
   },
   {
+    "mfussenegger/nvim-lint",
+  },
+  {
     "L3MON4D3/LuaSnip",
     -- commit = "",
   },
@@ -158,10 +184,6 @@ M.plugins = {
   {
     "gpanders/editorconfig.nvim",
     commit = "2af880947129f1ab776b732a4eecb92528472ef5",
-  },
-  {
-    "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
-    commit = "a7839742dadf90177f3a9ea4747e79f404d10af3",
   },
   {
     "kylechui/nvim-surround",
