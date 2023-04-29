@@ -5,7 +5,7 @@ M.module = "plugins"
 M.submodules = {
   "settings",
   "notify",
-  "alpha",
+  "dashboard",
   "project",
   "telescope",
   "cmp",
