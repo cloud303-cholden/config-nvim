@@ -11,7 +11,7 @@ function M:load()
     local r_submodule = require(self.module .. "." .. submodule)
     if r_submodule.submodules ~= nil then
       r_submodule:load()
-    elseif submodule ~= "packer_plugins" then
+    elseif submodule ~= nil then
       r_submodule.load()
     end
   end
