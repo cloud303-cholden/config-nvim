@@ -1,22 +1,14 @@
 local M = {}
 
 M.load = function()
-  vim.api.nvim_set_var("chadtree_settings", {
-    ["theme"] = {
-      ["text_colour_set"] = "env",
-    },
-    ["keymap"] = {
-      ["primary"] = { "l" },
-      ["collapse"] = { "h" },
-    },
-    ["ignore"] = {
-      ["name_exact"] = { ".git", "__pycache__" },
-    },
-    ["options"] = {
-      ["session"] = false,
+  local nonicons_extention = require("nvim-nonicons.extentions.nvim-tree")
+  require("nvim-tree").setup({
+    renderer = {
+      icons = {
+        glyphs = nonicons_extention.glyphs,
+      },
     },
   })
-
   local wk = require("which-key")
   local opts = {
     mode = "n",
@@ -27,7 +19,7 @@ M.load = function()
     nowait = true,
   }
   local mappings = {
-    e = { ":CHADopen<CR>", "Tree" },
+    e = { ":NvimTreeToggle<CR>", "Tree" },
   }
   wk.register(mappings, opts)
 end
