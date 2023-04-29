@@ -23,7 +23,7 @@ M.load = function()
   end
 
   local config = {
-    virtual_text = false, -- disable virtual text
+    virtual_text = true, -- disable virtual text
     signs = {
       active = signs, -- show signs
     },
@@ -86,6 +86,9 @@ M.on_attach = function(client, bufnr)
     return
   end
   navic.attach(client, bufnr)
+
+  local navbuddy = require("nvim-navbuddy")
+  navbuddy.attach(client, bufnr)
 end
 
 return M

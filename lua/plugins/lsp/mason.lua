@@ -22,20 +22,12 @@ M.load = function()
     return
   end
 
-  mason_lspconfig.setup({
-    ensure_installed = {
-      "gopls",
-    },
-  })
+  mason_lspconfig.setup({})
 
   local ok, lspconfig = pcall(require, "lspconfig")
   if not ok then
     return
   end
-
-  lspconfig.terraformls.setup({
-    cmd = { "terraform-ls", "serve" },
-  })
 
   mason_lspconfig.setup_handlers({
     function(server_name) -- default handler (optional)
@@ -54,12 +46,13 @@ M.load = function()
       rust.register_mappings()
     end,
     ["terraformls"] = function()
-      local settings = require("plugins.lsp.settings.tf").settings
-      lspconfig.terraformls.setup(settings)
+      local tf_settings = require("plugins.lsp.settings.tf").settings
+      lspconfig.terraformls.setup(tf_settings)
     end,
     ["gopls"] = function()
-      local settings = require("plugins.lsp.settings.go").settings
-      lspconfig.gopls.setup(settings)
+      local go = require("plugins.lsp.settings.go")
+      lspconfig.gopls.setup(go.settings)
+      go.load()
     end,
   })
 end
