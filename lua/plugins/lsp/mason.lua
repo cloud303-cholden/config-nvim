@@ -37,12 +37,12 @@ M.load = function()
       })
     end,
     ["lua_ls"] = function()
-      local lua_settings = require("plugins.lsp.settings.lua").settings
-      lspconfig.lua_ls.setup(lua_settings)
+      local lua = require("plugins.lsp.settings.lua")
+      lspconfig.lua_ls.setup(lua.settings)
     end,
     ["rust_analyzer"] = function()
-      local rust = require("plugins.lsp.settings.rust")
-      rust.load()
+      local rusts = require("plugins.lsp.settings.rust")
+      rusts.load()
     end,
     ["terraformls"] = function()
       local tf = require("plugins.lsp.settings.tf")
