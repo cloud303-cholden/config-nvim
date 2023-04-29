@@ -16,7 +16,6 @@ M.submodules = {
   "filetree",
   "icons",
   "keymappings",
-  "project",
   "search",
   "statusline",
   "terminal",
