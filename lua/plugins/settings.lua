@@ -177,6 +177,9 @@ M.plugins = {
     lazy = true,
   },
   {
+    "lewis6991/gitsigns.nvim",
+  },
+  {
     "windwp/nvim-autopairs",
     commit = "03580d758231956d33c8dd91e2be195106a79fa4",
     event = "InsertEnter",

@@ -14,6 +14,7 @@ M.submodules = {
   "dashboard",
   "editing",
   "filetree",
+  "git",
   "icons",
   "keymappings",
   "search",
