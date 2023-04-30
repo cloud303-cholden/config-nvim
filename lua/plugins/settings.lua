@@ -133,7 +133,6 @@ M.plugins = {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    commit = "d37fc85a4060352bcd4d8cbed0907cba442deb90",
   },
   {
     "williamboman/mason.nvim",
@@ -178,6 +177,9 @@ M.plugins = {
   },
   {
     "lewis6991/gitsigns.nvim",
+  },
+  {
+    "folke/trouble.nvim"
   },
   {
     "windwp/nvim-autopairs",
