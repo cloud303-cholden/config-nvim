@@ -5,7 +5,7 @@ M.module = "plugins.lsp"
 M.submodules = {
   "mason",
   "handlers",
-  "lint",
+  -- "lint",
 }
 
 return M
