@@ -88,7 +88,7 @@ M.load = function()
       },
       lualine_c = {
         {
-          navic.get_location,
+          function() return navic.get_location() end,
           cond = navic.is_available,
           padding = { left = 1, right = 0 },
           colored = true,
