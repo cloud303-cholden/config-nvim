@@ -14,7 +14,7 @@ M.load = function()
     },
   })
 
-  require("headlines").setup {
+  require("headlines").setup({
     markdown = {
       query = vim.treesitter.parse_query(
         "markdown",
@@ -53,7 +53,7 @@ M.load = function()
       fat_headline_upper_string = "▃",
       fat_headline_lower_string = "🬂",
     },
-  }
+  })
 end
 
 return M

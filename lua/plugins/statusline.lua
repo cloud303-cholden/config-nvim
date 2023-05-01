@@ -14,39 +14,39 @@ M.load = function()
   local navbuddy = require("nvim-navbuddy")
   navbuddy.setup({
     window = {
-      border = "rounded", 
+      border = "rounded",
     },
   })
 
   navic.setup({
     separator = "    ",
     icons = {
-        File          = " ",
-        Module        = " ",
-        Namespace     = " ",
-        Package       = " ",
-        Class         = " ",
-        Method        = " ",
-        Property      = " ",
-        Field         = " ",
-        Constructor   = " ",
-        Enum          = "練",
-        Interface     = "練",
-        Function      = " ",
-        Variable      = " ",
-        Constant      = " ",
-        String        = " ",
-        Number        = " ",
-        Boolean       = "◩ ",
-        Array         = " ",
-        Object        = " ",
-        Key           = " ",
-        Null          = "ﳠ ",
-        EnumMember    = " ",
-        Struct        = " ",
-        Event         = " ",
-        Operator      = " ",
-        TypeParameter = " ",
+      File = " ",
+      Module = " ",
+      Namespace = " ",
+      Package = " ",
+      Class = " ",
+      Method = " ",
+      Property = " ",
+      Field = " ",
+      Constructor = " ",
+      Enum = "練",
+      Interface = "練",
+      Function = " ",
+      Variable = " ",
+      Constant = " ",
+      String = " ",
+      Number = " ",
+      Boolean = "◩ ",
+      Array = " ",
+      Object = " ",
+      Key = " ",
+      Null = "ﳠ ",
+      EnumMember = " ",
+      Struct = " ",
+      Event = " ",
+      Operator = " ",
+      TypeParameter = " ",
     },
   })
 
@@ -88,7 +88,9 @@ M.load = function()
       },
       lualine_c = {
         {
-          function() return navic.get_location() end,
+          function()
+            return navic.get_location()
+          end,
           cond = navic.is_available,
           padding = { left = 1, right = 0 },
           colored = true,
@@ -106,7 +108,7 @@ M.load = function()
             unnamed = "",
           },
           filetype_names = {
-            toggleterm = 'Term',
+            toggleterm = "Term",
           },
           color = { gui = "italic" },
         },

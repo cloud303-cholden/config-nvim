@@ -35,7 +35,7 @@ M.plugins = {
       "MunifTanjim/nui.nvim",
       "numToStr/Comment.nvim",
       "nvim-telescope/telescope.nvim",
-    }
+    },
   },
   {
     "EdenEast/nightfox.nvim",
@@ -81,7 +81,6 @@ M.plugins = {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
-    commit = "c4c203c3e8a595bc333abaf168fcb10c13ed5fb7",
     branch = "master",
     event = { "BufReadPost", "BufNewFile" },
   },
@@ -162,8 +161,8 @@ M.plugins = {
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
     },
-    event = {"CmdlineEnter"},
-    ft = {"go", "gomod"},
+    event = { "CmdlineEnter" },
+    ft = { "go", "gomod" },
   },
   {
     "ray-x/guihua.lua",
@@ -179,7 +178,7 @@ M.plugins = {
     "lewis6991/gitsigns.nvim",
   },
   {
-    "folke/trouble.nvim"
+    "folke/trouble.nvim",
   },
   {
     "windwp/nvim-autopairs",
