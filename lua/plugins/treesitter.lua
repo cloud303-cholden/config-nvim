@@ -7,7 +7,22 @@ M.load = function()
   end
 
   treesitter_configs.setup({
-    ensure_installed = { "python", "go", "rust", "lua" },
+    ensure_installed = {
+      "python",
+      "go",
+      "rust",
+      "lua",
+      "bash",
+      "markdown",
+      "query",
+      "regex",
+      "sql",
+      "vim",
+      "vimdoc",
+      "c",
+      "typescript",
+      "javascript",
+    },
     ignore_install = { "" },
     highlight = {
       enable = true,
