@@ -53,7 +53,6 @@ M.load = function()
       groups = {
         ["<"] = { "<gv", "Visual Mode Unindent" },
         [">"] = { ">gv", "Visual Mode Indent" },
-        ["p"] = { "\"_dP", "Better Paste" },
       },
       options = { mode = "v" },
     },
