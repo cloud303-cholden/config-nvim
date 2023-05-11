@@ -6,91 +6,68 @@ M.load = function()
 
   local stages = {
     function(state)
-      local next_row = stages_util.available_slot(
-        state.open_windows,
-        state.message.height + 2,
-        stages_util.DIRECTION.BOTTOM_UP
-      )
-
+      local next_height = state.message.height + 2
+      local next_row = stages_util.available_slot(state.open_windows, next_height, stages_util.DIRECTION.BOTTOM_UP)
       if not next_row then
         return nil
       end
-
       return {
         relative = "editor",
         anchor = "NE",
         width = state.message.width,
         height = state.message.height,
-        col = 0,
+        col = vim.opt.columns:get(),
         row = next_row,
         border = "rounded",
         style = "minimal",
-        opacity = 0,
       }
     end,
-    function(state, win)
+    function()
       return {
-        opacity = { 100 },
-        col = { 1 },
-        row = {
-          stages_util.slot_after_previous(win, state.open_windows, stages_util.DIRECTION.BOTTOM_UP),
-          frequency = 3,
-          complete = function()
-            return true
-          end,
-        },
-      }
-    end,
-    function(state, win)
-      return {
-        col = { 1 },
+        col = { vim.opt.columns:get() },
         time = true,
-        row = {
-          stages_util.slot_after_previous(win, state.open_windows, stages_util.DIRECTION.BOTTOM_UP),
-          frequency = 3,
-          complete = function()
-            return true
-          end,
-        },
-      }
-    end,
-    function(state, win)
-      return {
-        width = {
-          1,
-          frequency = 2.5,
-          damping = 0.9,
-          complete = function(cur_width)
-            return cur_width < 3
-          end,
-        },
-        opacity = {
-          0,
-          frequency = 2,
-          complete = function(cur_opacity)
-            return cur_opacity <= 4
-          end,
-        },
-        col = { 1 },
-        row = {
-          stages_util.slot_after_previous(win, state.open_windows, stages_util.DIRECTION.BOTTOM_UP),
-          frequency = 3,
-          complete = function()
-            return true
-          end,
-        },
       }
     end,
   }
 
+  local compact = function(bufnr, notif, highlights)
+    local base = require("notify.render.base")
+    local namespace = base.namespace()
+    local icon = notif.icon
+    local title = notif.title[1]
+
+    local prefix = string.format("%s | %s:", icon, title)
+    notif.message[1] = string.format("%s %s", prefix, notif.message[1])
+
+    vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, notif.message)
+
+    local icon_length = vim.str_utfindex(icon)
+    local prefix_length = vim.str_utfindex(prefix)
+
+    vim.api.nvim_buf_set_extmark(bufnr, namespace, 0, 0, {
+      hl_group = highlights.icon,
+      end_col = icon_length + 1,
+      priority = 50,
+    })
+    vim.api.nvim_buf_set_extmark(bufnr, namespace, 0, icon_length + 1, {
+      hl_group = highlights.title,
+      end_col = prefix_length + 1,
+      priority = 50,
+    })
+    vim.api.nvim_buf_set_extmark(bufnr, namespace, 0, prefix_length + 1, {
+      hl_group = highlights.body,
+      end_line = #notif.message,
+      priority = 50,
+    })
+  end
+
   notify.setup({
     background_colour = "#444C5E",
-    render = "minimal",
+    render = compact,
     stages = stages,
-    fps = 100,
+    fps = 144,
+    timeout = 3000,
   })
-
-  -- return notify
 end
 
 return M
