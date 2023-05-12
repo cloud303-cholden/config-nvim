@@ -3,11 +3,13 @@ local M = {}
 M.load = function()
   local notify = require("notify")
   local stages_util = require("notify.stages.util")
+  local nonicons = require("nvim-nonicons.extentions.nvim-notify")
 
   local stages = {
     function(state)
       local next_height = state.message.height + 2
-      local next_row = stages_util.available_slot(state.open_windows, next_height, stages_util.DIRECTION.BOTTOM_UP)
+      local next_row =
+        stages_util.available_slot(state.open_windows, next_height, stages_util.DIRECTION.BOTTOM_UP)
       if not next_row then
         return nil
       end
@@ -62,9 +64,9 @@ M.load = function()
   end
 
   notify.setup({
-    background_colour = "#444C5E",
     render = compact,
     stages = stages,
+    icons = nonicons.icons,
     fps = 144,
     timeout = 3000,
   })

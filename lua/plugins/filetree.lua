@@ -67,7 +67,7 @@ M.load = function()
     nowait = true,
   }
   local mappings = {
-    e = { ":NvimTreeToggle<CR>", "Tree" },
+    e = { ":NvimTreeFindFileToggle<CR>", "Tree" },
   }
   wk.register(mappings, opts)
 end
