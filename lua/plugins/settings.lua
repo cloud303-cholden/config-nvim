@@ -16,8 +16,7 @@ M.plugins = {
     branch = "master",
   },
   {
-    "akinsho/bufferline.nvim",
-    version = "*",
+    "willothy/nvim-cokeline",
   },
   {
     "nvim-lualine/lualine.nvim",
