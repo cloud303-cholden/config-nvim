@@ -50,6 +50,12 @@ M.load = function()
     },
   })
 
+  vim.cmd("highlight CustomDiffAdd guifg=#a3be8c guibg=#434C5E")
+  vim.cmd("highlight CustomDiffChange guifg=#b48ead guibg=#434C5E")
+  vim.cmd("highlight CustomDiffDelete guifg=#d08770 guibg=#434C5E")
+  vim.cmd("highlight CustomDiagnosticError guifg=#bf616a guibg=#434C5E")
+  vim.cmd("highlight CustomDiagnosticWarn guifg=#ebcb8b guibg=#434C5E")
+  
   lualine.setup({
     options = {
       icons_enabled = true,
@@ -72,7 +78,7 @@ M.load = function()
       lualine_b = {
         {
           "branch",
-          color = { gui = "italic" },
+          color = { gui = "italic", fg = "#8FBCBB" },
           icons_enabled = true,
           icon = " ",
         },
@@ -80,6 +86,10 @@ M.load = function()
           "diagnostics",
           sources = { "nvim_diagnostic" },
           sections = { "error", "warn" },
+        diagnostics_color = {
+          error = "CustomDiagnosticError",
+          warn  = "CustomDiagnosticWarn",
+        },
           symbols = { error = "  ", warn = "  " },
           colored = true,
           update_in_insert = false,
@@ -110,13 +120,18 @@ M.load = function()
           filetype_names = {
             toggleterm = "Term",
           },
-          color = { gui = "italic" },
+          color = { gui = "italic", fg = "#8FBCBB" },
         },
       },
       lualine_y = {
         {
           "diff",
           colored = true,
+          diff_color = {
+            added    = "CustomDiffAdd",
+            modified = "CustomDiffChange",
+            removed  = "CustomDiffDelete",
+          },
           symbols = { added = "  ", modified = "  ", removed = "  " },
           cond = function()
             return vim.fn.winwidth(0) > 80
