@@ -31,7 +31,7 @@ M.load = function()
     dashboard.button("l", "  LSP", ":Mason<CR>"),
     dashboard.button("c", "  Configuration", ":e $NVIM_CONFIG <CR>"),
     dashboard.button("h", "  Help", ":h<CR>"),
-    dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+    dashboard.button("q", "  Quit", ":qa<CR>"),
   }
 
   local function footer()
