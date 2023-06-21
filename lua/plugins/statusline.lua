@@ -55,7 +55,7 @@ M.load = function()
   vim.cmd("highlight CustomDiffDelete guifg=#d08770 guibg=#434C5E")
   vim.cmd("highlight CustomDiagnosticError guifg=#bf616a guibg=#434C5E")
   vim.cmd("highlight CustomDiagnosticWarn guifg=#ebcb8b guibg=#434C5E")
-  
+
   lualine.setup({
     options = {
       icons_enabled = true,
@@ -86,10 +86,10 @@ M.load = function()
           "diagnostics",
           sources = { "nvim_diagnostic" },
           sections = { "error", "warn" },
-        diagnostics_color = {
-          error = "CustomDiagnosticError",
-          warn  = "CustomDiagnosticWarn",
-        },
+          diagnostics_color = {
+            error = "CustomDiagnosticError",
+            warn = "CustomDiagnosticWarn",
+          },
           symbols = { error = "  ", warn = "  " },
           colored = true,
           update_in_insert = false,
@@ -128,9 +128,9 @@ M.load = function()
           "diff",
           colored = true,
           diff_color = {
-            added    = "CustomDiffAdd",
+            added = "CustomDiffAdd",
             modified = "CustomDiffChange",
-            removed  = "CustomDiffDelete",
+            removed = "CustomDiffDelete",
           },
           symbols = { added = "  ", modified = "  ", removed = "  " },
           cond = function()

@@ -69,6 +69,10 @@ M.load = function()
         end,
       })
     end,
+    ["yamlls"] = function()
+      local yamlls = require("plugins.lsp.settings.yaml")
+      lspconfig.yamlls.setup(yamlls)
+    end,
   })
 end
 

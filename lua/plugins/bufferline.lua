@@ -8,16 +8,10 @@ M.load = function()
   require("cokeline").setup({
     default_hl = {
       fg = function(buffer)
-        return
-          buffer.is_focused
-          and "#282C34"
-           or "#8FBCBB"
+        return buffer.is_focused and "#282C34" or "#8FBCBB"
       end,
       bg = function(buffer)
-        return
-          buffer.is_focused
-          and "#81A1C1"
-           or "#5C6370"
+        return buffer.is_focused and "#81A1C1" or "#5C6370"
       end,
     },
 
@@ -29,10 +23,7 @@ M.load = function()
       {
         text = "",
         fg = function(buffer)
-          return
-            buffer.is_focused
-            and "#81A1C1"
-             or "#5C6370"
+          return buffer.is_focused and "#81A1C1" or "#5C6370"
         end,
         bg = "none",
       },
@@ -41,10 +32,7 @@ M.load = function()
           return buffer.devicon.icon
         end,
         fg = function(buffer)
-          return
-            buffer.is_focused
-            and "#282C34"
-             or buffer.devicon.color
+          return buffer.is_focused and "#282C34" or buffer.devicon.color
         end,
         style = "bold",
       },
@@ -52,16 +40,18 @@ M.load = function()
         text = " ",
       },
       {
-        text = function(buffer) return buffer.filename .. "  " end,
+        text = function(buffer)
+          return buffer.filename .. "  "
+        end,
         style = function(buffer)
           return buffer.is_focused and "bold,italic" or nil
         end,
       },
       {
         text = function(buffer)
-          local status = ''
+          local status = ""
           if buffer.is_modified then
-            status = ' '
+            status = " "
           end
           return status
         end,
@@ -69,10 +59,7 @@ M.load = function()
       {
         text = "",
         fg = function(buffer)
-          return
-            buffer.is_focused
-            and "#81A1C1"
-             or "#5C6370"
+          return buffer.is_focused and "#81A1C1" or "#5C6370"
         end,
         bg = "none",
       },
