@@ -5,20 +5,10 @@ M.load = function()
   vim.cmd("highlight NeoTreeFileIcon guifg=#8FBCBB")
   vim.cmd("highlight NeoTreeModified guifg=#bf616a")
   vim.cmd("highlight GitGutterChange guifg=#b48ead")
-  -- M.GIT_ADDED = "NeoTreeGitAdded"
-  -- M.GIT_CONFLICT = "NeoTreeGitConflict"
-  -- M.GIT_DELETED = "NeoTreeGitDeleted"
-  -- M.GIT_IGNORED = "NeoTreeGitIgnored"
-  -- M.GIT_MODIFIED = "NeoTreeGitModified"
-  -- M.GIT_RENAMED = "NeoTreeGitRenamed"
-  -- M.GIT_STAGED = "NeoTreeGitStaged"
-  -- M.GIT_UNTRACKED = "NeoTreeGitUntracked"
-  -- M.GIT_UNSTAGED = "NeoTreeGitUnstaged"
 
   local nt = require("neo-tree")
   nt.setup({
     use_libuv_file_watcher = true,
-    follow_current_file = true,
     enable_git_status = true,
     enable_diagnostics = true,
     sources = {
@@ -26,6 +16,9 @@ M.load = function()
       "buffers",
       "git_status",
       "document_symbols",
+    },
+    filesystem = {
+      follow_current_file = true,
     },
     window = {
       position = "right",
