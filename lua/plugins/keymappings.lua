@@ -38,7 +38,7 @@ M.load = function()
         ["<C-Down>"] = { ":resize +2<CR>", "Increase Window Height" },
         ["<C-Left>"] = { ":vertical resize -2<CR>", "Decrease Window Width" },
         ["<C-Right>"] = { ":vertical resize +2<CR>", "Increase Window Width" },
-        ["<S-q>"] = { ":bdelete<CR>", "Delete Buffer" },
+        ["<S-q>"] = { ":bp | bd #<CR>", "Delete Buffer" },
       },
     },
     none_insert = {
