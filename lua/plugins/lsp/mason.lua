@@ -60,6 +60,7 @@ M.load = function()
           ["textDocument/publishDiagnostics"] = function(...) end,
         },
         on_attach = require("plugins.lsp.handlers").on_attach,
+        settings = require("plugins.lsp.settings.python"),
       })
     end,
     ["ruff_lsp"] = function()
