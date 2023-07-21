@@ -19,6 +19,11 @@ M.load = function()
     },
     filesystem = {
       follow_current_file = true,
+      filtered_items = {
+        never_show = {
+          "__pycache__",
+        },
+      },
     },
     window = {
       position = "right",
