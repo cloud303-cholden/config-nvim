@@ -4,7 +4,7 @@ M.settings = {
   python = {
     analysis = {
       autoSearchPaths = false,
-      useLibraryCodeForTypes = false,
+      useLibraryCodeForTypes = true,
       diagnosticMode = "openFilesOnly",
       typeCheckingMode = "off",
     },
