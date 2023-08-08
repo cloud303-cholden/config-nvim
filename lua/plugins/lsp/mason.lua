@@ -74,6 +74,12 @@ M.load = function()
       local yamlls = require("plugins.lsp.settings.yaml")
       lspconfig.yamlls.setup(yamlls)
     end,
+    ["lemminx"] = function()
+      lspconfig.lemminx.setup({
+        settings = require("plugins.lsp.settings.xml"),
+        filetypes = { "xml", "xsd", "xsl", "xslt", "svg", "rng" },
+      })
+    end,
   })
 end
 
