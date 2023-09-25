@@ -17,6 +17,8 @@ M.plugins = {
   },
   {
     "willothy/nvim-cokeline",
+    branch = "main",
+    -- commit = "709a379",
   },
   {
     "nvim-lualine/lualine.nvim",
@@ -50,6 +52,13 @@ M.plugins = {
     "shaunsingh/nord.nvim",
   },
   {
+    "kevinhwang91/nvim-ufo", dependencies = {"kevinhwang91/promise-async"},
+    commit = "890b94870f052773d77175d07a51f2e083210632",
+  },
+  {
+    "luukvbaal/statuscol.nvim",
+  },
+  {
     "yamatsum/nvim-nonicons",
   },
   {
@@ -79,7 +88,7 @@ M.plugins = {
   },
   {
     "nvim-lua/plenary.nvim",
-    commit = "9a0d3bf7b832818c042aaf30f692b081ddd58bd9",
+    -- commit = "9a0d3bf7b832818c042aaf30f692b081ddd58bd9",
     branch = "master",
     lazy = true,
   },

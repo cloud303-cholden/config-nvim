@@ -6,10 +6,10 @@ M.load = function()
     return
   end
 
-  local ok, navic = pcall(require, "nvim-navic")
-  if not ok then
-    return
-  end
+  -- local ok, navic = pcall(require, "nvim-navic")
+  -- if not ok then
+  --   return
+  -- end
 
   local navbuddy = require("nvim-navbuddy")
   navbuddy.setup({
@@ -18,37 +18,38 @@ M.load = function()
     },
   })
 
-  navic.setup({
-    separator = "    ",
-    icons = {
-      File = " ",
-      Module = " ",
-      Namespace = " ",
-      Package = " ",
-      Class = " ",
-      Method = " ",
-      Property = " ",
-      Field = " ",
-      Constructor = " ",
-      Enum = "練",
-      Interface = "練",
-      Function = " ",
-      Variable = " ",
-      Constant = " ",
-      String = " ",
-      Number = " ",
-      Boolean = "◩ ",
-      Array = " ",
-      Object = " ",
-      Key = " ",
-      Null = "ﳠ ",
-      EnumMember = " ",
-      Struct = " ",
-      Event = " ",
-      Operator = " ",
-      TypeParameter = " ",
-    },
-  })
+  -- navic.setup({
+  --   depth_limit = 1,
+  --   separator = "    ",
+  --   icons = {
+  --     File = " ",
+  --     Module = " ",
+  --     Namespace = " ",
+  --     Package = " ",
+  --     Class = " ",
+  --     Method = " ",
+  --     Property = " ",
+  --     Field = " ",
+  --     Constructor = " ",
+  --     Enum = "練",
+  --     Interface = "練",
+  --     Function = " ",
+  --     Variable = " ",
+  --     Constant = " ",
+  --     String = " ",
+  --     Number = " ",
+  --     Boolean = "◩ ",
+  --     Array = " ",
+  --     Object = " ",
+  --     Key = " ",
+  --     Null = "ﳠ ",
+  --     EnumMember = " ",
+  --     Struct = " ",
+  --     Event = " ",
+  --     Operator = " ",
+  --     TypeParameter = " ",
+  --   },
+  -- })
 
   vim.cmd("highlight CustomDiffAdd guifg=#a3be8c guibg=#434C5E")
   vim.cmd("highlight CustomDiffChange guifg=#b48ead guibg=#434C5E")
@@ -97,14 +98,12 @@ M.load = function()
         },
       },
       lualine_c = {
-        {
-          function()
-            return navic.get_location()
-          end,
-          cond = navic.is_available,
-          padding = { left = 1, right = 0 },
-          colored = true,
-        },
+        -- {
+        --   function()
+        --     return "  " .. vim.fn.wordcount().chars
+        --   end,
+        --   color = { gui = "italic", fg = "#8FBCBB" },
+        -- }
       },
       lualine_x = {
         {

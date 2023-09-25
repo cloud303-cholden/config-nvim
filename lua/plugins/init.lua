@@ -10,6 +10,7 @@ M.submodules = {
   "lsp",
 
   "appearance",
+  "ui",
   "bufferline",
   "completions",
   "dashboard",

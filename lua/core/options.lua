@@ -23,7 +23,6 @@ M.load = function()
   o.showcmd = false
   o.ruler = false
   o.wrap = true
-  o.number = false
 
   o.pumheight = 10
   o.cmdheight = 0

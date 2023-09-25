@@ -30,7 +30,7 @@ M.load = function()
       settings = {
         ["rust-analyzer"] = {
           lens = {
-            enable = true,
+            enable = false,
           },
           checkOnSave = {
             command = "clippy",
