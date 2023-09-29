@@ -2,6 +2,12 @@ local M = {}
 
 M.plugins = {
   {
+    "folke/twilight.nvim",
+  },
+  {
+    "nvim-treesitter/playground",
+  },
+  {
     "rcarriga/nvim-notify",
     commit = "30e6b5a710319e354c3e362deb7819cb2135c417",
   },

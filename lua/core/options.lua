@@ -36,6 +36,16 @@ M.load = function()
   o.numberwidth = 4
   o.scrolloff = 8
   o.sidescrolloff = 8
+  vim.wo.foldmethod="expr"
+  vim.wo.foldexpr="nvim_treesitter#foldexpr()"
+  vim.wo.foldnestmax=2
+  vim.wo.foldlevel = 4
+  vim.o.foldcolumn = '1'
+  vim.o.foldlevelstart = 0
+  vim.o.foldenable = true
+  vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+  vim.wo.foldtext =
+    [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) . '  ' . (v:foldend - v:foldstart + 1)]]
 
   o.signcolumn = "yes"
   o.mouse = "a"
