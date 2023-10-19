@@ -1,11 +1,6 @@
 local M = {}
 
 M.load = function()
-  vim.cmd("highlight NeoTreeIndentMarker guifg=#bf616a")
-  vim.cmd("highlight NeoTreeFileIcon guifg=#8FBCBB")
-  vim.cmd("highlight NeoTreeModified guifg=#bf616a")
-  vim.cmd("highlight GitGutterChange guifg=#b48ead")
-
   local nt = require("neo-tree")
   nt.setup({
     use_libuv_file_watcher = true,
@@ -45,14 +40,15 @@ M.load = function()
         symbol = " ",
         highlight = "NeoTreeModified",
       },
+      name = {use_git_status_colors = true},
       git_status = {
         symbols = {
-          added = " ",
-          modified = " ",
-          deleted = " ",
-          renamed = " ",
+          added = "",
+          modified = "",
+          deleted = "",
+          renamed = "",
           untracked = " ",
-          ignored = " ",
+          ignored = "",
           unstaged = " ",
           staged = " ",
           conflict = " ",
@@ -74,6 +70,7 @@ M.load = function()
     e = { ":Neotree action=focus position=right reveal<CR>", "Tree" },
   }
   wk.register(mappings, opts)
+  vim.cmd("hi NeoTreeCursorLine guibg=#81a1c1 guifg=#191d24 gui=bold")
 end
 
 return M

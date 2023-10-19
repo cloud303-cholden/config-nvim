@@ -2,6 +2,13 @@ local M = {}
 
 M.load = function()
   require("noice").setup({
+    views = {
+      mini = {
+        win_options = {
+          winblend = 0,
+        },
+      },
+    },
     lsp = {
       -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
       override = {
@@ -20,36 +27,17 @@ M.load = function()
     },
   })
 
-  local ok, indent_blankline = pcall(require, "indent_blankline")
+  local ok, indent_blankline = pcall(require, "ibl")
   if not ok then
     return
   end
 
   indent_blankline.setup({
-    char = ".",
-    show_trailing_blankline_indent = false,
-    char_highlight_list = {
-      "Comment",
-    },
+    indent = { highlight = { "IblNormal" }, char = "." },
+    whitespace = { highlight = "IblWhitespace", remove_blankline_trail = true },
+    scope = { highlight = "IblScope" },
   })
-  -- Refresh on fold keymap
-  for _, keymap in pairs({
-    'zo',
-    'zO',
-    'zc',
-    'zC',
-    'za',
-    'zA',
-    'zv',
-    'zx',
-    'zX',
-    'zm',
-    'zM',
-    'zr',
-    'zR',
-  }) do
-    vim.api.nvim_set_keymap('n', keymap,  keymap .. '<CMD>IndentBlanklineRefresh<CR>', { noremap=true, silent=true })
-  end
+  vim.cmd("hi @ibl.scope.underline.1 gui=none guibg=#292e39")
 
   require("headlines").setup({
     markdown = {
