@@ -54,7 +54,7 @@ M.load = function()
   o.guifont = "monospace:h17"
   o.fcs = "eob: "
   o.shell = "zsh"
-  o.guicursor = "i:block"
+  o.guicursor = "i:block-Cursor"
 
   -- o.colorcolumn = { 99 }
   o.fillchars = { eob = " " }
