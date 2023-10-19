@@ -56,7 +56,7 @@ M.load = function()
   o.shell = "zsh"
   o.guicursor = "i:block"
 
-  o.colorcolumn = { 99 }
+  -- o.colorcolumn = { 99 }
   o.fillchars = { eob = " " }
   o.completeopt = { "menu", "menuone", "noselect" }
 

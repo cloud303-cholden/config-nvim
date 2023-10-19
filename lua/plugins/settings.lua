@@ -58,6 +58,12 @@ M.plugins = {
     "shaunsingh/nord.nvim",
   },
   {
+    "AlexvZyl/nordic.nvim",
+  },
+  {
+    "rmehri01/onenord.nvim",
+  },
+  {
     "kevinhwang91/nvim-ufo", dependencies = {"kevinhwang91/promise-async"},
     commit = "890b94870f052773d77175d07a51f2e083210632",
   },

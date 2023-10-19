@@ -26,12 +26,30 @@ M.load = function()
   end
 
   indent_blankline.setup({
-    char = "┊",
+    char = ".",
     show_trailing_blankline_indent = false,
     char_highlight_list = {
       "Comment",
     },
   })
+  -- Refresh on fold keymap
+  for _, keymap in pairs({
+    'zo',
+    'zO',
+    'zc',
+    'zC',
+    'za',
+    'zA',
+    'zv',
+    'zx',
+    'zX',
+    'zm',
+    'zM',
+    'zr',
+    'zR',
+  }) do
+    vim.api.nvim_set_keymap('n', keymap,  keymap .. '<CMD>IndentBlanklineRefresh<CR>', { noremap=true, silent=true })
+  end
 
   require("headlines").setup({
     markdown = {
