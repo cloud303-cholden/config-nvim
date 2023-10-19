@@ -15,7 +15,6 @@ M.submodules = {
   "completions",
   "dashboard",
   "editing",
-  -- "filetree",
   "tree",
   "git",
   "icons",
