@@ -12,13 +12,12 @@ M.load = function()
     end,
   })
 
-  -- vim.api.nvim_create_autocmd("FileType", {
-  --   pattern = { "neo-tree" },
-  --   callback = function()
-  --     require("ufo").detach()
-  --     vim.opt_local.foldenable = false
-  --   end
-  -- })
+  vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = { "*.wgsl" },
+    callback = function()
+      vim.cmd("set filetype=wgsl")
+    end,
+  })
 end
 
 return M

@@ -80,6 +80,12 @@ M.load = function()
         filetypes = { "xml", "xsd", "xsl", "xslt", "svg", "rng" },
       })
     end,
+    ["wgsl_analyzer"] = function()
+      lspconfig.wgsl_analyzer.setup({
+        cmd = { "wgsl_analyzer" },
+        filetypes = { "wgsl" },
+      })
+    end,
   })
 end
 
