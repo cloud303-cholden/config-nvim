@@ -35,9 +35,10 @@ M.load = function()
   indent_blankline.setup({
     indent = { highlight = { "IblNormal" }, char = "." },
     whitespace = { highlight = "IblWhitespace", remove_blankline_trail = true },
-    scope = { highlight = "IblScope" },
+    scope = { enabled = false },
+    -- scope = { highlight = "IblScope" },
   })
-  vim.cmd("hi @ibl.scope.underline.1 gui=none guibg=#292e39")
+  -- vim.cmd("hi @ibl.scope.underline.1 gui=none guibg=#292e39")
 
   require("headlines").setup({
     markdown = {

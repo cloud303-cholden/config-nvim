@@ -21,6 +21,7 @@ M.load = function()
       },
     },
     window = {
+      width = 30,
       position = "right",
       mappings = {
         ["l"] = "open",

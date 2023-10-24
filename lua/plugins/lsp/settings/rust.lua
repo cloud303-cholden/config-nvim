@@ -38,6 +38,11 @@ M.load = function()
           diagnostics = {
             disabled = { "unresolved-proc-macro" },
           },
+          -- cargo = {
+          --   extraEnv = {
+          --     RUSTFLAGS = "--cfg rust_analyzer",
+          --   },
+          -- },
         },
       },
     },
