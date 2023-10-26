@@ -86,6 +86,9 @@ M.load = function()
         filetypes = { "wgsl" },
       })
     end,
+    ["taplo"] = function()
+      lspconfig.taplo.setup({})
+    end,
   })
 end
 
