@@ -5,8 +5,13 @@ M.load = function()
   if not ok then
     return
   end
-
   comment.setup({})
+
+  local ok, comment_ft = pcall(require, "Comment.ft")
+  if not ok then
+    return
+  end
+  comment_ft.set('wgsl', '// %s')
 
   local ok, surround = pcall(require, "nvim-surround")
   if not ok then
