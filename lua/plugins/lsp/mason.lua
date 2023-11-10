@@ -29,6 +29,7 @@ M.load = function()
     return
   end
 
+  -- Server configurations: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
   mason_lspconfig.setup_handlers({
     function(server_name) -- default handler (optional)
       require("lspconfig")[server_name].setup({
@@ -88,6 +89,12 @@ M.load = function()
     end,
     ["taplo"] = function()
       lspconfig.taplo.setup({})
+    end,
+    ["svelte"] = function()
+      lspconfig.svelte.setup({})
+    end,
+    ["tsserver"] = function()
+      lspconfig.tsserver.setup({})
     end,
   })
 end
