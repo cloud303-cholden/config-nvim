@@ -72,7 +72,7 @@ M.load = function()
           "mode",
           color = { gui = "bold" },
           fmt = function(str)
-            return "  " .. str
+            return " " .. str
           end,
         },
       },
@@ -81,7 +81,7 @@ M.load = function()
           "branch",
           color = { gui = "italic", fg = "#8FBCBB" },
           icons_enabled = true,
-          icon = " ",
+          icon = "",
         },
         {
           "diagnostics",
@@ -91,7 +91,7 @@ M.load = function()
             error = "CustomDiagnosticError",
             warn = "CustomDiagnosticWarn",
           },
-          symbols = { error = "  ", warn = "  " },
+          symbols = { error = " ", warn = " " },
           colored = true,
           update_in_insert = false,
           always_visible = true,
@@ -112,7 +112,7 @@ M.load = function()
           path = 1, -- Relative path
           shorting_target = 80,
           symbols = {
-            modified = " ",
+            modified = "",
             readonly = "",
             unnamed = "",
           },
@@ -131,7 +131,7 @@ M.load = function()
             modified = "CustomDiffChange",
             removed = "CustomDiffDelete",
           },
-          symbols = { added = "  ", modified = "  ", removed = "  " },
+          symbols = { added = " ", modified = " ", removed = " " },
           cond = function()
             return vim.fn.winwidth(0) > 80
           end,

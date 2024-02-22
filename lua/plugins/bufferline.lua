@@ -77,7 +77,7 @@ M.load = function()
         text = function(buffer)
           local status = ""
           if buffer.is_modified then
-            status = " "
+            status = ""
           end
           return status
         end,

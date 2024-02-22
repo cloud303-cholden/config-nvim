@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "typescript-svelte-plugin": "^0.3.34"
+  }
+}

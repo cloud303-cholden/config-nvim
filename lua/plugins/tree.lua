@@ -32,11 +32,11 @@ M.load = function()
       indent = {
         highlight = "NeoTreeIndentMarker",
       },
-      icon = {
-        folder_closed = " ",
-        folder_open = " ",
-        highlight = "NeoTreeFileIcon",
-      },
+      -- icon = {
+      --   folder_closed = " ",
+      --   folder_open = " ",
+      --   highlight = "NeoTreeFileIcon",
+      -- },
       modified = {
         symbol = " ",
         highlight = "NeoTreeModified",
@@ -48,11 +48,11 @@ M.load = function()
           modified = "",
           deleted = "",
           renamed = "",
-          untracked = " ",
+          untracked = "",
           ignored = "",
-          unstaged = " ",
-          staged = " ",
-          conflict = " ",
+          unstaged = "",
+          staged = "",
+          conflict = "",
         },
       },
     },
