@@ -29,7 +29,7 @@ M.load = function()
     dashboard.button("r", "󰆧 Repositories", ":Telescope projects<CR>"),
     dashboard.button("p", " Plugins", ":Lazy<CR>"),
     dashboard.button("l", " LSP", ":Mason<CR>"),
-    dashboard.button("c", " Configuration", ":e $NVIM_CONFIG <CR>"),
+    dashboard.button("c", " Configuration", ":e ~/repos/config-nvim <CR>"),
     dashboard.button("h", " Help", ":h<CR>"),
     dashboard.button("q", " Quit", ":qa<CR>"),
   }
@@ -37,13 +37,13 @@ M.load = function()
   local function footer()
     local total_plugins = #vim.tbl_keys(require("lazy.core.config").plugins)
     local datetime = os.date("%m-%d-%Y %H:%M:%S")
-    local plugins_text = "   v"
+    local plugins_text = "  v"
       .. vim.version().major
       .. "."
       .. vim.version().minor
       .. "."
       .. vim.version().patch
-      .. "  "
+      .. "  "
       .. total_plugins
       .. " plugins"
       .. "  "
