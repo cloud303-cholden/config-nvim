@@ -23,6 +23,7 @@ M.load = function()
       end,
     },
     sources = {
+      { name = "cody" },
       { name = "nvim_lsp" },
       { name = "nvim_lua" },
       { name = "buffer" },

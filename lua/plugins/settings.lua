@@ -228,6 +228,11 @@ M.plugins = {
     "kylechui/nvim-surround",
     commit = "ad56e6234bf42fb7f7e4dccc7752e25abd5ec80e",
   },
+  {
+    "sourcegraph/sg.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+	  build = "nvim -l build/init.lua",
+  }
 }
 
 M.load = function()

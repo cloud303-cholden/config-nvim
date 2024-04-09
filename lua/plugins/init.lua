@@ -17,6 +17,7 @@ M.submodules = {
   "editing",
   "tree",
   "git",
+  "sg",
   -- "icons",
   "keymappings",
   "search",
