@@ -14,6 +14,13 @@ M.load = function()
       vim.lsp.buf.format()
     end,
   })
+  -- Set filetype to terraform instead of terraform-vars (the latter is broken)
+  vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = { "*.tfvars" },
+    callback = function()
+      vim.cmd("set filetype=terraform")
+    end,
+  })
 end
 
 return M
