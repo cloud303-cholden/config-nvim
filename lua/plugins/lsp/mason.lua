@@ -94,7 +94,9 @@ M.load = function()
       lspconfig.svelte.setup({})
     end,
     ["tsserver"] = function()
-      lspconfig.tsserver.setup({})
+      lspconfig.tsserver.setup({
+        on_attach = require("plugins.lsp.handlers").on_attach,
+      })
     end,
   })
 end
