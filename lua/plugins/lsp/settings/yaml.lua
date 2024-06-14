@@ -25,4 +25,6 @@ M.settings = {
   },
 }
 
+M.filetypes = { "yaml", "yml", "yaml.ghaction" }
+
 return M

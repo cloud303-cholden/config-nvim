@@ -98,6 +98,9 @@ M.load = function()
         on_attach = require("plugins.lsp.handlers").on_attach,
       })
     end,
+    ["eslint"] = function()
+      lspconfig.eslint.setup({})
+    end,
   })
 end
 
