@@ -9,7 +9,8 @@ M.load = function()
   })
 
   require('lint').linters_by_ft = {
-    ghaction = {'actionlint',}
+    ghaction = { 'actionlint' },
+    tflint = { 'tfvars', 'tf', 'hcl' },
   }
 
   vim.api.nvim_create_autocmd({ "BufWritePost" }, {
