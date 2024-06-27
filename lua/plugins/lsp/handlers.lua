@@ -13,8 +13,35 @@ M.capabilities.textDocument.foldingRange = {
   lineFoldingOnly = true
 }
 
+
 M.load = function()
-  require("trouble").setup({})
+  require("trouble").setup({
+    win = { wo = { wrap = true } },
+  })
+  -- vim.api.nvim_create_autocmd("FileType", {
+  --   pattern = "trouble",
+  --   callback = function()
+  --     vim.defer_fn(function()
+  --       print("Autocommand triggered for filetype: trouble")
+  --       vim.wo.wrap = true
+  --     end, 0)
+  --   end
+  -- })
+
+  local wk = require("which-key")
+  local opts = {
+    mode = "n",
+    prefix = "<LEADER>",
+    buffer = nil,
+    silent = false,
+    noremap = true,
+    nowait = true,
+  }
+  local mappings = {
+    t = { ":Trouble diagnostics focus=true autojump=true filter.buf=0 win.position=right win.size=80<CR>", "Trouble" },
+  }
+  wk.register(mappings, opts)
+  vim.cmd("hi TroubleNormal guibg=none")
 
   local signs = {
     { name = "DiagnosticSignError", text = "" },

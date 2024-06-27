@@ -23,6 +23,7 @@ M.load = function()
         ["wq"] = { ":wqa<CR>", "Write All and Quit" },
         ["q"] = { ":qa<CR>", "Quit All" },
         ["n"] = { ":set nu!<CR>", "Toggle Line Numbers" },
+        ["x"] = { ":Trouble diagnostics focus=true autojump=true filter.buf=0 win.position=right win.size=80<CR>", "Trouble" },
       },
     },
     none_normal = {

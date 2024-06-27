@@ -91,9 +91,11 @@ M.load = function()
       lspconfig.taplo.setup({})
     end,
     ["svelte"] = function()
+      require("nvim-ts-autotag").setup()
       lspconfig.svelte.setup({})
     end,
     ["tsserver"] = function()
+      require("nvim-ts-autotag").setup()
       lspconfig.tsserver.setup({
         on_attach = require("plugins.lsp.handlers").on_attach,
       })

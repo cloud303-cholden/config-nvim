@@ -68,7 +68,7 @@ M.load = function()
     nowait = true,
   }
   local mappings = {
-    e = { ":Neotree action=focus position=right reveal<CR>", "Tree" },
+    e = { ":Neotree action=focus position=right toggle<CR>", "Tree" },
   }
   wk.register(mappings, opts)
   vim.cmd("hi NeoTreeCursorLine guibg=#81a1c1 guifg=#191d24 gui=bold")
